@@ -1,0 +1,174 @@
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.AssemblyReference.cache
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\firstProj.Form1.resources
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.GenerateResource.cache
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.GeneratedMSBuildEditorConfig.editorconfig
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.AssemblyInfoInputs.cache
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.AssemblyInfo.cs
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.CoreCompileInputs.cache
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\FirstProj.exe
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\FirstProj.dll.config
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\FirstProj.deps.json
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\FirstProj.runtimeconfig.json
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\FirstProj.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\FirstProj.pdb
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\BL.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\DAL.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\BL.pdb
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\DAL.pdb
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.CopyComplete
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\refint\FirstProj.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.pdb
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.genruntimeconfig.cache
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\ref\FirstProj.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\NLog.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.Form2.resources
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Azure.Core.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Azure.Identity.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Humanizer.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyModel.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Memory.Data.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\System.Text.Json.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+Y:\חדש-הנדסת תוכנה\תשפב\תשפג\שנה ב\סמינר\דיני קויט\פרויקט גמר\firstProj\firstProj\obj\Debug\net6.0-windows\FirstProj.PartForm.resources
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\firstProj.Form1.resources
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.Form2.resources
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.PartForm.resources
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.GenerateResource.cache
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.AssemblyInfo.cs
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\refint\FirstProj.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.pdb
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\FirstProj.exe
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\FirstProj.dll.config
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\FirstProj.deps.json
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\FirstProj.runtimeconfig.json
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\FirstProj.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\FirstProj.pdb
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Azure.Core.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Azure.Identity.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Humanizer.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\NLog.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Memory.Data.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\BL.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\DAL.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\BL.pdb
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\DAL.pdb
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.csproj.CopyComplete
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\FirstProj.genruntimeconfig.cache
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\obj\Debug\net6.0-windows\ref\FirstProj.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Npgsql.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\User\Downloads\final-project-master\final-project-master\firstProj\bin\Debug\net6.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
