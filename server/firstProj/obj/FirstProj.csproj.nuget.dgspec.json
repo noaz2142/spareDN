@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\firstProj\\FirstProj.csproj": {}
+    "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\firstProj\\FirstProj.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\BL\\BL.csproj": {
+    "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\BL\\BL.csproj",
+        "projectUniqueName": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\BL\\BL.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\BL\\obj\\",
+        "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\BL\\BL.csproj",
+        "packagesPath": "C:\\Users\\בת שבע\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\בת שבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\DAL\\DAL.csproj"
+              "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj"
               }
             }
           }
@@ -63,8 +63,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,24 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\DAL\\DAL.csproj": {
+    "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\בת שבע\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\בת שבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -158,8 +157,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -168,29 +166,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\firstProj\\FirstProj.csproj": {
+    "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\firstProj\\FirstProj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\firstProj\\FirstProj.csproj",
+        "projectUniqueName": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\firstProj\\FirstProj.csproj",
         "projectName": "FirstProj",
-        "projectPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\firstProj\\FirstProj.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\firstProj\\obj\\",
+        "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\firstProj\\FirstProj.csproj",
+        "packagesPath": "C:\\Users\\בת שבע\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\firstProj\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\בת שבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -200,8 +198,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\BL\\BL.csproj": {
-                "projectPath": "C:\\Users\\User\\Downloads\\final-project-master\\final-project-master\\BL\\BL.csproj"
+              "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\BL\\BL.csproj": {
+                "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\BL\\BL.csproj"
               }
             }
           }
@@ -229,8 +227,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -242,7 +239,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

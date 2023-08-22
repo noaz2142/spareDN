@@ -21,9 +21,21 @@ public partial class SpareDnContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Documents\\SpareDNDB.mdf;Integrated Security=True;Connect Timeout=30");
-       // => optionsBuilder.UseSqlServer("name=postgresqlconnectionstring");
+    {
+        string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+        string connectionStr = "";
+        if (userName.Contains("DESKTOP-EV7M95R"))
+        {
+            connectionStr = "server =DESKTOP-EV7M95R\\SQLUSER; database=deviceParts;trusted_connection=true;TrustServerCertificate=Yes";
+        }
+        else
+        {
+            connectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Documents\\SpareDNDB.mdf;Integrated Security=True;Connect Timeout=30";
+        }
+        optionsBuilder.UseSqlServer(connectionStr);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
