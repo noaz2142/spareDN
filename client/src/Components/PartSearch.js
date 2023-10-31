@@ -5,7 +5,7 @@ export default function PartSearch(props) {
     const { setParts } = props;
 
     const handleSearch = (search) => {
-        axios.get('https://localhost:7082/api/Parts/getPartByName', { params: { name: search } })
+        axios.get('https://localhost:7082/api/Parts/getPartByName', { params: { name: search, categoryId: -1 } })
             .then(response => {
                 if (response.status === 200) {
                     setParts(response?.data || {});

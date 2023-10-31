@@ -11,7 +11,17 @@ public partial class PartForDevice
 
     public string? PartImage { get; set; }
 
-    public int? OriginalPrice { get; set; }
+    public string? Description { get; set; }
 
-    public virtual ICollection<PartForOther> PartForOthers { get; } = new List<PartForOther>();
+    public decimal Price { get; set; }
+
+    public int ContactId { get; set; }
+
+    public int CategoryId { get; set; }
+
+    public string PartStatus { get; set; } = null!;
+
+    public virtual Category Category { get; set; } = null!;
+
+    public virtual User Contact { get; set; } = null!;
 }

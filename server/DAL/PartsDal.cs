@@ -14,7 +14,7 @@ namespace DAL
         {
             try
             {
-                using (DbModels.SpareDnContext ctx = new())
+                using (DbModels.DevicePartsContext ctx = new())
                 {
                     ctx.PartForDevices.Add(d);
                     ctx.SaveChanges();
@@ -31,7 +31,7 @@ namespace DAL
         {
             try
             {
-                using (DbModels.SpareDnContext ctx = new())
+                using (DbModels.DevicePartsContext ctx = new())
                 {
                     ctx.PartForDevices.Remove(d);
                     ctx.SaveChanges();
@@ -49,7 +49,7 @@ namespace DAL
         {
             try
             {
-                using (DbModels.SpareDnContext ctx = new())
+                using (DbModels.DevicePartsContext ctx = new())
                 {
                     ctx.PartForDevices.Attach(d);
                     ctx.Entry(d).State = EntityState.Modified;
@@ -68,10 +68,29 @@ namespace DAL
         {
             try
             {
-                using (DbModels.SpareDnContext ctx = new DbModels.SpareDnContext())         
+                using (DbModels.DevicePartsContext ctx = new DbModels.DevicePartsContext())         
                 {
                    return  ctx.PartForDevices.ToList();
                      
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+
+            }
+        }
+
+        // fetch category list
+
+        public IEnumerable<DbModels.Category> GetAllCategory()
+        {
+            try
+            {
+                using (DbModels.DevicePartsContext ctx = new DbModels.DevicePartsContext())
+                {
+                    return ctx.Categories.ToList();
+
                 }
             }
             catch (Exception)

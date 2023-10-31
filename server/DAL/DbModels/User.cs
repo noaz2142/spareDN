@@ -11,11 +11,9 @@ public partial class User
 
     public string? UserPassword { get; set; }
 
-    public string? LoginName { get; set; }
-
     public string? Mail { get; set; }
 
-    public int? UserType { get; set; }
+    public string? Phone { get; set; }
 
-    public virtual ICollection<PartForOther> PartForOthers { get; } = new List<PartForOther>();
+    public virtual ICollection<PartForDevice> PartForDevices { get; set; } = new List<PartForDevice>();
 }

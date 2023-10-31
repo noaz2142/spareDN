@@ -1,71 +1,59 @@
-import React, { useEffect, useState } from "react";
-// import "../styles.css";
-import { SignUpForm, SignInForm } from ".";
+import React from 'react';
+import {
+  MDBContainer,
+  MDBInput,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon
+}
+  from 'mdb-react-ui-kit';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+
 export function Login() {
   const navigate = useNavigate();
 
-  const [changePage, setChangePage] = useState(false)
-  useEffect(() => {
-    axios.get('https://localhost:7082/api/Parts', {})
-        .then(response => useState);
-  }, [])
-  useEffect(() => {
-    if (changePage === true) {
-      navigate('./AllProducts')
-      alert('frgt')
-    }
-  }, [changePage]);
-
-  const [arrUsers, setArrUsers] = useState([{ name: "noa", email: "123@gmail", pass: "123" }
-    , { name: "dini", email: "dini@gmail", pass: "222" },
-  { name: "michal", email: "333@gmail", pass: "333" }
-    , { name: "ztipi", email: "555@gmail", pass: "555" }]);
-  const [type, setType] = useState("signIn");
-  const handleOnClick = text => {
-    if (text !== type) {
-      setType(text);
-      return;
-    }
-  };
-  const containerClass =
-    "container " + (type === "signUp" ? "right-panel-active" : "");
   return (
-    <div className="App">
-      <h2>Sign in/up Form</h2>
-      <div className={containerClass} id="container">
-        <SignUpForm users={arrUsers} />
-        <SignInForm setChngePage={setChangePage} changePage={changePage} users={arrUsers} setArrUsers={setArrUsers} />
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button
-                className="ghost"
-                id="signIn"
-                onClick={() => handleOnClick("signIn")}
-              >
-                Sign In
-              </button>
-            </div>
-            <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button
-                className="ghost "
-                id="signUp"
-                onClick={() => handleOnClick("signUp")}
-              >
-                Sign Up
-              </button>
-            </div>
+    <form
+      className="needs-validation"
+      noValidate
+    >
+      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+
+        <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email' required />
+        <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' />
+
+        <div className="d-flex justify-content-between mx-3 mb-4">
+          <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+          <a href="!#">Forgot password?</a>
+        </div>
+
+        <MDBBtn className="mb-4">Sign in</MDBBtn>
+
+        <div className="text-center">
+          <p>Not a member? <a href='' onClick={() => navigate('/signup')}>Register</a></p>
+          <p>or sign up with:</p>
+
+          <div className='d-flex justify-content-between mx-auto' style={{ width: '40%' }}>
+            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='facebook-f' size="sm" />
+            </MDBBtn>
+
+            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='twitter' size="sm" />
+            </MDBBtn>
+
+            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='google' size="sm" />
+            </MDBBtn>
+
+            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='github' size="sm" />
+            </MDBBtn>
+
           </div>
         </div>
-      </div>
-    </div>
+
+      </MDBContainer>
+    </form>
   );
 }

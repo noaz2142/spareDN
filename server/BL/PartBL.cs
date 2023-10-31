@@ -34,9 +34,20 @@ namespace BL
             return new DAL.PartsDal().GetAll();
         }
 
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName(string nameToSearch)
+        public IEnumerable<DAL.DbModels.Category> GetCategoryList()
         {
-            return new DAL.PartsDal().GetAll().Where(x => x.PartName == nameToSearch);
+            /*  DAL.partDAL partDAL = new DAL.partDAL();*/
+
+            return new DAL.PartsDal().GetAllCategory();
+        }
+
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName(string nameToSearch, int categoryId)
+        {
+            if (categoryId != -1)
+            {
+                return GetPartsByCategory(categoryId).Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
+            }
+            return new DAL.PartsDal().GetAll().Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
         }
 
         public void AddPart(PartForDevice value)
@@ -55,6 +66,13 @@ namespace BL
         {
             new DAL.PartsDal().Update(value);
 
+        }
+
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory(int categoryId)
+        {
+            /*  DAL.partDAL partDAL = new DAL.partDAL();*/
+
+            return new DAL.PartsDal().GetAll().Where((partDetails)=> partDetails.CategoryId==categoryId);
         }
     }
 }

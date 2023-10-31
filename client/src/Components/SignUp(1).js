@@ -1,100 +1,131 @@
-import React from "react";
-import { makeStyles } from '@mui/styles';
-const useStyles = makeStyles({
-    input:{
-        background: 'white',
-        border: '1px solid  #FE6B8B ',
-        borderRadius: 30,
-      },
-      button: {
-        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-        border: 0,
-        borderRadius: 30,
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        color: 'white',
-        height: 42,
-        width:200,
-        padding: '10px 30px',
-        fontSize:"100%"
-      },
-})
-export function SignUpForm() {
-    const classes = useStyles();
+import React, { useState } from 'react';
+import {
+  MDBContainer,
+  MDBBtn,
+  MDBInput,
+  MDBCheckbox
+} from 'mdb-react-ui-kit';
+import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from "react-router-dom";
 
-  const [state, setState] = React.useState({
-    name: "",
-    email: "",
-    password: ""
+export function SignUp() {
+  const [newUser, setNewUser] = useState({
+    userName: '',
+    phone: '',
+    mail: '',
+    userPassword: '',
   });
-  const handleChange = evt => {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value
-    });
-  };
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showFailure, setShowFailure] = useState(false);
 
-  const handleOnSubmit = evt => {
-    evt.preventDefault();
+  const [isEmailValid, setEmailValid] = useState(true);
+  const [isPasswordValid, setPasswordValid] = useState(true);
+  const [isPhoneValid, setPhoneValid] = useState(true);
+  const navigate = useNavigate();
 
-    const { name, email, password } = state;
-    alert(
-      `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
+  const onChangeHandler = (field, value) => {
+    setShowFailure(false);
+    setShowSuccess(false);
+    setNewUser((user) => ({ ...user, [field]: value }));
 
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
-      });
+    // Validate the input fields
+    switch (field) {
+      case 'mail':
+        setEmailValid(/^\S+@\S+\.\S+$/.test(value)); // Basic email format validation
+        break;
+      case 'userPassword':
+        setPasswordValid(value.length >= 8); // Password must be at least 8 characters long
+        break;
+      case 'phone':
+        setPhoneValid(/^\d{10}$/.test(value)); // Basic phone number format validation (10 digits)
+        break;
+      default:
+        break;
     }
   };
 
+  const handleSubmit = () => {
+    if (isFormValid()) {
+      axios.post('https://localhost:7082/api/User/sign-up', newUser)
+        .then(response => {
+          if (response.status === 200) {
+            setShowSuccess(true);
+          }
+        })
+        .catch((ex) => {
+          console.log(ex);
+          setShowFailure(true);
+        });
+    }
+  };
+
+  const isFormValid = () => {
+    return isEmailValid && isPasswordValid && isPhoneValid &&
+      newUser.userName && newUser.phone && newUser.mail && newUser.userPassword;
+  };
+
   return (
-    <div className="form-container sign-up-container">
-      <form onSubmit={handleOnSubmit}>
-        <h1>Create Account</h1>
-        <div className="social-container">
-          <a href="#" className="social">
-            <i className="fab fa-facebook-f" />
-          </a>
-          <a href="#" className="social">
-            <i className="fab fa-google-plus-g" />
-          </a>
-          <a href="#" className="social">
-            <i className="fab fa-linkedin-in" />
-          </a>
+    <>
+      {showSuccess && (
+        <div
+          className="modal show"
+          style={{ display: 'block', position: 'initial' }}
+        >
+          <Modal.Dialog>
+            <Modal.Header closeButton>
+              <Modal.Title>Welcome!</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <p>You have been signed in successfully</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button variant="primary" onClick={() => { setShowSuccess(false); navigate('/home'); }}>Home</Button>
+            </Modal.Footer>
+          </Modal.Dialog>
         </div>
-        <span>or use your email for registration</span>
-        <input
-          type="text"
-          name="name"
-          value={state.name}
-          onChange={handleChange}
-          placeholder="Name"
-          className={classes.input}
+      )}
 
-        />
-        <input
-          type="email"
-          name="email"
-          value={state.email}
-          onChange={handleChange}
-          placeholder="Email"
-          className={classes.input}
+      {showFailure && (
+        <div
+          className="modal show"
+          style={{ display: 'block', position: 'initial' }}
+        >
+          <Modal.Dialog>
+            <Modal.Header closeButton>
+              <Modal.Title>Incorrect Details</Modal.Title>
+            </Modal.Header>
 
-        />
-        <input
-          type="password"
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-          placeholder="Password"
-          className={classes.input}
+            <Modal.Body>
+              <p>We were Not Able to Complete the Request Now. Enter another name</p>
+            </Modal.Body>
 
-        />
-        <button className={classes.button}>Sign Up</button>
-      </form>
-    </div>
+            <Modal.Footer>
+              <Button variant="primary" onClick={() => setShowFailure(false)}>Try Again</Button>
+            </Modal.Footer>
+          </Modal.Dialog>
+        </div>
+      )}
+
+      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+
+        <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text' required onChange={(ev) => onChangeHandler('userName', ev.target.value)} />
+        <MDBInput wrapperClass='mb-4' label='Phone' id='form1' type='tel' required onChange={(ev) => onChangeHandler('phone', ev.target.value)} isValid={isPhoneValid} />
+        {!isPhoneValid && <small className="text-danger">Please enter a valid phone number (10 digits).</small>}
+        <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' required onChange={(ev) => onChangeHandler('mail', ev.target.value)} isValid={isEmailValid} />
+        {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
+        <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' onChange={(ev) => onChangeHandler('userPassword', ev.target.value)} isValid={isPasswordValid} />
+        {!isPasswordValid && <small className="text-danger">Password must be at least 8 characters long.</small>}
+        <div className='d-flex justify-content-center mb-4'>
+          <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I want to join the newsletter' />
+        </div>
+
+        <MDBBtn className="mb-4 w-100" onClick={handleSubmit} disabled={!isFormValid()}>Sign up</MDBBtn>
+
+      </MDBContainer>
+    </>
   );
 }

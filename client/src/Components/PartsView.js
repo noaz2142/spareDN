@@ -14,11 +14,15 @@ export function PartsView() {
     }, []);
 
     const fetchData = async () => {
-        try {
-            axios.get('https://localhost:7082/api/Parts', { categoty: id })
-                .then(response => setParts(response.data));
-        } catch (error) {
-            console.error('Error fetching parts:', error);
+        if (!parts?.length) {
+            try {
+                axios.get('https://localhost:7082/api/Parts/getPartsByCategory', { params: { categoryId: id } })
+                    .then(response => setParts(response.data));
+
+            }
+            catch (error) {
+                console.error('Error fetching parts:', error);
+            }
         }
     };
 

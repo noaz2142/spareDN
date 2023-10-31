@@ -19,10 +19,25 @@ namespace WebAPI.Controllers
 
         // GET: api/<PartsController>
         [HttpGet]
-        [Route("getPartByName")]
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName([FromQuery] string name)
+        [Route("getCategoryList")]
+        public IEnumerable<DAL.DbModels.Category> GetCategoryList()
         {
-            return new BL.PartBL().GetPartsByName(name);
+            return new BL.PartBL().GetCategoryList();
+        }
+
+        [HttpGet]
+        [Route("getPartsByCategory")]
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory([FromQuery] int categoryId)
+        {
+            return new BL.PartBL().GetPartsByCategory(categoryId);
+        }
+
+        // GET: api/<PartsController>
+        [HttpGet]
+        [Route("getPartByName")]
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName([FromQuery] string name, [FromQuery] int categoryId)
+        {
+            return new BL.PartBL().GetPartsByName(name, categoryId);
         }
 
         // GET api/<PartsController>/5

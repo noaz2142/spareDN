@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import PartSearch from './PartSearch';
 
 export function CategoryView() {
     const [categoryList, setCategorys] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
-        setCategorys([{
-            id: 1,
-            desc: 'Kitchen Dishes'
-        },
-        {
-            id: 2,
-            desc: 'Electricity'
-        }]);
+        if (!categoryList?.length) {
+            axios.get('https://localhost:7082/api/Parts/getCategoryList', {})
+                .then(response => setCategorys(response.data || []))
+                .catch((ex) => console.error(ex));
+        }
     }, []);
 
     return (
@@ -25,7 +24,7 @@ export function CategoryView() {
                             <div className="card" key={item.id}>
                                 <div className="card-body">
                                     <h5 className="card-title">
-                                        <a onClick={() => navigate(`/parts/${item.id}`)}>{item.desc}</a>
+                                        <a onClick={() => navigate(`/parts/${item.categorId}`)}>{item.description}</a>
                                     </h5>
                                 </div>
                             </div>
