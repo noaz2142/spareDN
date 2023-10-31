@@ -27,6 +27,21 @@ namespace BL
 
         }
 
+        public User? GetExistingUser(string userName, string password)
+        {
+            try
+            {
+                return new DAL.UserDal().GetUsers()
+                    .FirstOrDefault((user) => user.UserName.ToLower() == userName.ToLower() && user.UserPassword == password);
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
         public bool UpdateExistingUser(DAL.DbModels.User existingUser)
         {
             try

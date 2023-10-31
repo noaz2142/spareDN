@@ -68,6 +68,20 @@ namespace WebAPI.Controllers
             return new BL.UserBL().UpdateExistingUser(existingUser);
         }
 
+        [HttpPost("login")]
+        public User? Login([FromQuery] string userName, [FromQuery] string password)
+        {
+            try
+            {
+                User? existingUser = new BL.UserBL().GetExistingUser(userName, password);
+                return existingUser;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }
 

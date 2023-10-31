@@ -74,7 +74,7 @@ export function SignUp() {
           style={{ display: 'block', position: 'initial' }}
         >
           <Modal.Dialog>
-            <Modal.Header closeButton>
+            <Modal.Header>
               <Modal.Title>Welcome!</Modal.Title>
             </Modal.Header>
 
@@ -95,7 +95,7 @@ export function SignUp() {
           style={{ display: 'block', position: 'initial' }}
         >
           <Modal.Dialog>
-            <Modal.Header closeButton>
+            <Modal.Header>
               <Modal.Title>Incorrect Details</Modal.Title>
             </Modal.Header>
 
@@ -109,23 +109,26 @@ export function SignUp() {
           </Modal.Dialog>
         </div>
       )}
+      {!showSuccess && !showFailure && (
+        <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
-      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+          <MDBInput wrapperClass='mb-4' label='User Name' id='form1' type='text' required onChange={(ev) => onChangeHandler('userName', ev.target.value)} />
+          <MDBInput wrapperClass='mb-4' label='Phone' id='form1' type='tel' required onChange={(ev) => onChangeHandler('phone', ev.target.value)} isValid={isPhoneValid} />
+          {!isPhoneValid && <small className="text-danger">Please enter a valid phone number (10 digits).</small>}
+          <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' required onChange={(ev) => onChangeHandler('mail', ev.target.value)} isValid={isEmailValid} />
+          {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
+          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' onChange={(ev) => onChangeHandler('userPassword', ev.target.value)} isValid={isPasswordValid} />
+          {!isPasswordValid && <small className="text-danger">Password must be at least 8 characters long.</small>}
+          <div className='d-flex justify-content-center mb-4'>
+            <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I want to join the newsletter' />
+          </div>
 
-        <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text' required onChange={(ev) => onChangeHandler('userName', ev.target.value)} />
-        <MDBInput wrapperClass='mb-4' label='Phone' id='form1' type='tel' required onChange={(ev) => onChangeHandler('phone', ev.target.value)} isValid={isPhoneValid} />
-        {!isPhoneValid && <small className="text-danger">Please enter a valid phone number (10 digits).</small>}
-        <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' required onChange={(ev) => onChangeHandler('mail', ev.target.value)} isValid={isEmailValid} />
-        {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
-        <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' onChange={(ev) => onChangeHandler('userPassword', ev.target.value)} isValid={isPasswordValid} />
-        {!isPasswordValid && <small className="text-danger">Password must be at least 8 characters long.</small>}
-        <div className='d-flex justify-content-center mb-4'>
-          <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I want to join the newsletter' />
-        </div>
-
-        <MDBBtn className="mb-4 w-100" onClick={handleSubmit} disabled={!isFormValid()}>Sign up</MDBBtn>
-
-      </MDBContainer>
+          <MDBBtn className="mb-4 w-100" onClick={handleSubmit} disabled={!isFormValid()}>Sign up</MDBBtn>
+          <div className="text-center">
+            <p>Already a member? <a href='' onClick={() => navigate('/login')}>Sign in</a></p>
+          </div>
+        </MDBContainer>
+      )}
     </>
   );
 }
