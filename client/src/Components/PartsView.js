@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import PartSearch from './PartSearch';
+import { PartItem } from './index';
 import {
     useParams
 } from "react-router-dom";
 
 export function PartsView() {
     const [parts, setParts] = useState(null);
+    const [selectedPart, setSelectedPart] = useState(null);
+
     const { id } = useParams();
 
     useEffect(() => {
@@ -27,28 +30,47 @@ export function PartsView() {
     };
 
     return (
-        <div className="container">
-            <PartSearch setParts={(updatedPartList) => setParts(updatedPartList)} />
-            <div className="row" id="myItems">
-                <div className="col-sm-12 mb-3">
-                    {parts ? (
-                        parts.map((item) => (
-                            // <div >
-                            //     <span>{item.partName}</span>
-                            // </div
-                            <div className="card" key={item.partName}>
-                                <div className="card-body">
-                                    <h5 className="card-title"><a href="#">{item.partName}</a></h5>
-                                    <h6 className="card-subtitle mb-2 text-muted">Card Description</h6>
-                                    <p className="card-text">{item.originalPrice}</p>
+        <>
+            <div className="container">
+                <PartSearch setParts={(updatedPartList) => setParts(updatedPartList)} />
+                <div className="row" id="myItems">
+                    <div className="col-sm-12 mb-3">
+                        {parts ? (
+                            parts.map((item) => (
+                                <div className="card col-sm-4" key={item.partName} onClick={() => setSelectedPart(item)}>
+                                    <div className="card-body">
+                                        {item.partImage &&
+                                            <img
+                                                src={(() => {
+                                                    try {
+                                                        return require(`../images/${item.partImage}`);
+                                                    } catch (error) {
+                                                        // image not found
+                                                        console.error(`Error loading image: ${error.message}`);
+                                                        return null;
+                                                    }
+                                                })()}
+                                                width={300}
+                                                alt="Part Image"
+                                            />
+                                        }
+                                        <h5 className="card-title">
+                                            {item.partName}
+                                        </h5>
+                                        <h6 className="card-subtitle mb-2 text-muted">{item.price} NIS</h6>
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    ) : (
-                        <p>Loading...</p>
-                    )}
+                            ))
+                        ) : (
+                            <p>Loading...</p>
+                        )}
+                    </div>
                 </div>
             </div>
-        </div>
+            {selectedPart && <PartItem
+                selectedItem={selectedPart}
+                handleClose={() => setSelectedPart(null)}
+            />}
+        </>
     );
 }

@@ -72,7 +72,14 @@ namespace BL
         {
             /*  DAL.partDAL partDAL = new DAL.partDAL();*/
 
-            return new DAL.PartsDal().GetAll().Where((partDetails)=> partDetails.CategoryId==categoryId);
+            return new DAL.PartsDal()
+                .GetAll()
+                .Select((part) =>
+                {
+                    part.Contact = new BL.UserBL().GetUserById(part.ContactId);
+                    return part;
+                })
+                .Where((partDetails) => partDetails.CategoryId == categoryId);
         }
     }
 }

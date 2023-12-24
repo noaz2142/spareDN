@@ -62,8 +62,13 @@ export function Login() {
         <a href="!#">Forgot password?</a>
       </div>
 
-      <MDBBtn className="mb-4" onClick={submitLogin}>Sign in</MDBBtn>
-
+      <MDBBtn
+        disabled={!existingUser.password || !existingUser.userName}
+        className="mb-4"
+        onClick={submitLogin}
+      >
+        Sign in
+      </MDBBtn>
       <div className="text-center">
         <p>Not a member? <a href='' onClick={() => navigate('/signup')}>Register</a></p>
         <p>or sign up with:</p>

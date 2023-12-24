@@ -71,7 +71,6 @@ namespace DAL
                 using (DbModels.DevicePartsContext ctx = new DbModels.DevicePartsContext())         
                 {
                    return  ctx.PartForDevices.ToList();
-                     
                 }
             }
             catch (Exception)

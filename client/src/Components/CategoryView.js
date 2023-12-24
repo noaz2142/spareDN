@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import PartSearch from './PartSearch';
 
+// save 
+// https://codesandbox.io/s/zyotd?file=/src/App.js
+// todo: add card
+
 export function CategoryView() {
     const [categoryList, setCategorys] = useState(null);
     const navigate = useNavigate();
@@ -21,7 +25,7 @@ export function CategoryView() {
                 <div className="col-sm-12 mb-3">
                     {categoryList ? (
                         categoryList.map((item) => (
-                            <div className="card" key={item.id}>
+                            <div className="card" key={item.CategoryId}>
                                 <div className="card-body">
                                     <h5 className="card-title">
                                         <a onClick={() => navigate(`/parts/${item.categorId}`)}>{item.description}</a>
