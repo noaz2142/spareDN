@@ -5,3 +5,4 @@ export * from './SignUp';
 export * from './Home';
 export * from './CategoryView';
 export * from './PartItem';
+export * from './FindPart';

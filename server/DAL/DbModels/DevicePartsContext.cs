@@ -23,7 +23,7 @@ public partial class DevicePartsContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-EV7M95R\\SQLUSER;Initial Catalog=deviceParts;Integrated Security=True;Connect Timeout=30; Integrated Security=True;Encrypt=False;trusted_connection=true;TrustServerCertificate=Yes;");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-EV7M95R\\SQLUSER;Initial Catalog=deviceParts;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=Yes;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -79,12 +79,19 @@ public partial class DevicePartsContext : DbContext
 
             entity.HasIndex(e => e.UserName, "UQ__Users__C9F2845649689C9A").IsUnique();
 
+            entity.Property(e => e.City)
+                .HasMaxLength(20)
+                .IsUnicode(false);
             entity.Property(e => e.Mail)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Phone)
                 .HasMaxLength(11)
                 .IsUnicode(false);
+            entity.Property(e => e.State)
+                .HasMaxLength(15)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('Israel')");
             entity.Property(e => e.UserName)
                 .HasMaxLength(20)
                 .IsUnicode(false);

@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+לסדר את הדף של המוצרים.- תיאור שגולש ל-2 שורות
+להוסיף מוצר.
+חיפוש לפי עיר- יצרנו עמוד חדש- find-part
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -68,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### C#- Command
+update dbContext 
+<!-- dotnet ef dbcontext scaffold "Data Source=DESKTOP-EV7M95R\SQLUSER;Initial Catalog=deviceParts;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=Yes;" Microsoft.EntityFrameworkCore.SqlServer -o DbModels --project "DAL" --force -->

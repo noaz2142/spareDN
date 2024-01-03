@@ -31,33 +31,35 @@ export function PartsView() {
 
     return (
         <>
-            <div className="container">
+            <div className="container parts-view">
                 <PartSearch setParts={(updatedPartList) => setParts(updatedPartList)} />
-                <div className="row" id="myItems">
-                    <div className="col-sm-12 mb-3">
+                <div className='container'>
+                    <div className="row gx-5" id="myItems">
                         {parts ? (
                             parts.map((item) => (
-                                <div className="card col-sm-4" key={item.partName} onClick={() => setSelectedPart(item)}>
-                                    <div className="card-body">
-                                        {item.partImage &&
-                                            <img
-                                                src={(() => {
-                                                    try {
-                                                        return require(`../images/${item.partImage}`);
-                                                    } catch (error) {
-                                                        // image not found
-                                                        console.error(`Error loading image: ${error.message}`);
-                                                        return null;
-                                                    }
-                                                })()}
-                                                width={300}
-                                                alt="Part Image"
-                                            />
-                                        }
-                                        <h5 className="card-title">
-                                            {item.partName}
-                                        </h5>
-                                        <h6 className="card-subtitle mb-2 text-muted">{item.price} NIS</h6>
+                                <div className='col-4'>
+                                    <div className="card" key={item.partName} onClick={() => setSelectedPart(item)}>
+                                        <div className="card-body">
+                                            {item.partImage &&
+                                                <img
+                                                    src={(() => {
+                                                        try {
+                                                            return require(`../images/${item.partImage}`);
+                                                        } catch (error) {
+                                                            // image not found
+                                                            console.error(`Error loading image: ${error.message}`);
+                                                            return null;
+                                                        }
+                                                    })()}
+                                                    width={300}
+                                                    alt="Part Image"
+                                                />
+                                            }
+                                            <h5 className="card-title">
+                                                {item.partName}
+                                            </h5>
+                                            <h6 className="card-subtitle mb-2 text-muted">{item.price} NIS</h6>
+                                        </div>
                                     </div>
                                 </div>
                             ))

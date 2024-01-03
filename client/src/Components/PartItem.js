@@ -55,6 +55,17 @@ export const PartItem = (props) => {
                                             Phone: {contact.phone}
                                         </span>
                                     </div>
+                                    <div>
+                                        <i class="bi bi-house-door" />
+                                        <span className="part-detail">
+                                            City: {contact.city}
+                                        </span>
+                                        {contact.state !== 'Israel' && (
+                                            <span className="part-detail">
+                                                State: {contact.state}
+                                            </span>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>

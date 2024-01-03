@@ -15,5 +15,9 @@ public partial class User
 
     public string? Phone { get; set; }
 
-    public virtual ICollection<PartForDevice> PartForDevices { get; set; } = new List<PartForDevice>();
+    public string? City { get; set; }
+
+    public string? State { get; set; }
+
+    public virtual ICollection<PartForDevice> PartForDevices { get; } = new List<PartForDevice>();
 }

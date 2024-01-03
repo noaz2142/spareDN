@@ -11,12 +11,12 @@ const menuItems = [
     },
     {
       title: "Products",
-      url: "#",
+      url: "/category",
       cName: "nav-links"
     },
     {
       title: "Find Part",
-      url: "/category",
+      url: "/find-part",
       cName: "nav-links"
     },
     {
