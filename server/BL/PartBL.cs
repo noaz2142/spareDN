@@ -18,6 +18,7 @@ namespace BL
             try
             {
                 PartsDal d = new PartsDal();
+                
                 d.Insert(p);
                 return true;
             }
@@ -50,8 +51,17 @@ namespace BL
             return new DAL.PartsDal().GetAll().Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
         }
 
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCity(string city, string state = "Israel", int categoryId = -1)
+        {
+            return GetPartsByCategory(categoryId).Where(x => x.Contact.City.Contains(city, StringComparison.OrdinalIgnoreCase));
+        }
+
         public void AddPart(PartForDevice value)
         {
+            if (value.Contact == null)
+            {
+                value.Contact = new UserBL().GetUserById(value.ContactId);
+            }
             new DAL.PartsDal().Insert(value);
         }
 

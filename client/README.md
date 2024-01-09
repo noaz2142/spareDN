@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-לסדר את הדף של המוצרים.- תיאור שגולש ל-2 שורות
-להוסיף מוצר.
+להוסיף מוצר.- התחלנו בריאקט, באג בC# שבריקפוינט לא מוצג, שמירה לא עובדת
 חיפוש לפי עיר- יצרנו עמוד חדש- find-part
+לתקן חיפוש לפי עיר לפי העמודה החדשה שיצרנו- עיר ומדינה למוצר
 
 ## Available Scripts
 

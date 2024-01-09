@@ -51,6 +51,15 @@ public partial class DevicePartsContext : DbContext
             entity.Property(e => e.PartImage)
                 .HasMaxLength(60)
                 .IsUnicode(false);
+            entity.Property(e => e.PartLocationCity)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("partLocationCity");
+            entity.Property(e => e.PartLocationState)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('Israel')")
+                .HasColumnName("partLocationState");
             entity.Property(e => e.PartName)
                 .HasMaxLength(50)
                 .IsUnicode(false);

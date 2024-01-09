@@ -6,3 +6,4 @@ export * from './Home';
 export * from './CategoryView';
 export * from './PartItem';
 export * from './FindPart';
+export * from './AddPartForm';

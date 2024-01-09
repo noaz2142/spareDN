@@ -12,7 +12,7 @@ namespace WebAPI.Controllers
     {
         // GET: api/<PartsController>
         [HttpGet]
-        public IEnumerable<DAL.DbModels.PartForDevice > Get()
+        public IEnumerable<DAL.DbModels.PartForDevice> Get()
         {
             return new BL.PartBL().GetParts();
         }
@@ -45,21 +45,25 @@ namespace WebAPI.Controllers
         public PartForDevice Get(int id)
         {
             BL.PartBL part = new BL.PartBL();
-            return part.GetParts().FirstOrDefault(i => i.PartForDeviceId == id);           
+            return part.GetParts().FirstOrDefault(i => i.PartForDeviceId == id);
         }
 
         // POST api/<PartsController>
         [HttpPost]
-        public void Post([FromBody] DAL.DbModels.PartForDevice  value)
+        [Route("add")]
+
+        public void Post([FromBody] DAL.DbModels.PartForDevice value)
         {
-              new BL.PartBL().AddPart(value);
+            int x = 5;
+            int y = x + 2;
+            new BL.PartBL().AddPart(value);
         }
 
         // PUT api/<PartsController>/5
         [HttpPut]
-        public void update(  PartForDevice value)
+        public void update(PartForDevice value)
         {
-            new BL.PartBL().UpdatePart( value);
+            new BL.PartBL().UpdatePart(value);
         }
 
         // DELETE api/<PartsController>/5

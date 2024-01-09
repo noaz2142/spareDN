@@ -4,7 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 export const PartItem = (props) => {
     const { selectedItem, handleClose } = props;
     const {
-        price, partName, description, partImage, contact
+        price, partName, description, partImage, contact,
+        partLocationCity, partLocationState
     } = selectedItem || {};
     return (
         <>
@@ -58,11 +59,11 @@ export const PartItem = (props) => {
                                     <div>
                                         <i class="bi bi-house-door" />
                                         <span className="part-detail">
-                                            City: {contact.city}
+                                            City: {partLocationCity || contact.city}
                                         </span>
-                                        {contact.state !== 'Israel' && (
+                                        {(partLocationState || contact.state) !== 'Israel' && (
                                             <span className="part-detail">
-                                                State: {contact.state}
+                                                State: {partLocationState || contact.state}
                                             </span>
                                         )}
                                     </div>

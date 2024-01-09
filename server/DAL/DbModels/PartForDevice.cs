@@ -21,7 +21,11 @@ public partial class PartForDevice
 
     public string PartStatus { get; set; } = null!;
 
+    public string? PartLocationCity { get; set; }
+
+    public string? PartLocationState { get; set; }
+
     public virtual Category Category { get; set; } = null!;
 
-    public virtual User Contact { get; set; } = null!;
+    public virtual User Contact { get; set; }
 }
