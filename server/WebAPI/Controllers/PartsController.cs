@@ -52,11 +52,11 @@ namespace WebAPI.Controllers
         [HttpPost]
         [Route("add")]
 
-        public void Post([FromBody] DAL.DbModels.PartForDevice value)
+        public void Post([FromBody] DAL.DtoModels.PartDTO value)
         {
             int x = 5;
             int y = x + 2;
-            new BL.PartBL().AddPart(value);
+            new BL.PartBL().AddPart(PartForDevice.FromPartDTO(value));
         }
 
         // PUT api/<PartsController>/5

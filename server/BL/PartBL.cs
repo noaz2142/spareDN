@@ -58,10 +58,10 @@ namespace BL
 
         public void AddPart(PartForDevice value)
         {
-            if (value.Contact == null)
-            {
-                value.Contact = new UserBL().GetUserById(value.ContactId);
-            }
+            //if (value.Contact == null)
+            //{
+            //    value.Contact = new UserBL().GetUserById(value.ContactId);
+            //}
             new DAL.PartsDal().Insert(value);
         }
 

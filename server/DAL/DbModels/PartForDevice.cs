@@ -2,9 +2,26 @@
 using System.Collections.Generic;
 
 namespace DAL.DbModels;
+using DAL.DtoModels;
 
 public partial class PartForDevice
 {
+    public static PartForDevice FromPartDTO(PartDTO p)
+    {
+        PartForDevice partForDevice = new PartForDevice();
+        partForDevice.Price = p.Price;
+        partForDevice.PartLocationCity = p.PartLocationCity;
+        partForDevice.PartStatus = p.PartStatus;
+        partForDevice.PartLocationState = p.PartLocationState;
+        partForDevice.PartImage = p.PartImage;
+        partForDevice.PartName = p.PartName;
+        partForDevice.CategoryId = p.CategoryId;
+        partForDevice.ContactId = p.ContactId;
+        partForDevice.Description = p.Description;
+        //partForDevice.Contact = null;
+        //partForDevice.Category=null
+        return partForDevice;
+    }
     public int PartForDeviceId { get; set; }
 
     public string? PartName { get; set; }

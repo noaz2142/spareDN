@@ -1,23 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import PartSearch from './PartSearch';
 
-// save 
-// https://codesandbox.io/s/zyotd?file=/src/App.js
-// todo: add card
-
-export function CategoryView() {
-    const [categoryList, setCategorys] = useState(null);
+export function CategoryView({categoryList}) {
     const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!categoryList?.length) {
-            axios.get('https://localhost:7082/api/Parts/getCategoryList', {})
-                .then(response => setCategorys(response.data || []))
-                .catch((ex) => console.error(ex));
-        }
-    }, []);
 
     return (
         <div className="container">
