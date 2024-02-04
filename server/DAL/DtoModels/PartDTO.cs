@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace DAL.DtoModels
 {
     public partial class PartDTO
     {
-        public string? PartName { get; set; }
+        public string PartName { get; set; }
 
         public string? PartImage { get; set; }
 

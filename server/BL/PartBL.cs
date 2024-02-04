@@ -6,20 +6,22 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using DAL.DbModels;
-
+using Microsoft.AspNetCore.Http;
 
 namespace BL
 {
     public class PartBL
     {
-        public bool SaveNewPart(DAL.DbModels.PartForDevice p)
+        public bool SaveNewPart(DAL.DtoModels.PartDTO p)
         {
             try
             {
+
+                // saving image
                 PartsDal d = new PartsDal();
-                
-                d.Insert(p);
+                d.Insert(PartForDevice.FromPartDTO(p));
                 return true;
             }
             catch
@@ -56,13 +58,50 @@ namespace BL
             return GetPartsByCategory(categoryId).Where(x => x.Contact.City.Contains(city, StringComparison.OrdinalIgnoreCase));
         }
 
-        public void AddPart(PartForDevice value)
+        public bool SaveFile(IFormFile value)
         {
-            //if (value.Contact == null)
+            if (value == null || value.Length == 0)
+                return false;
+
+            // Generate a unique filename or use the original filename, depending on your requirements
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(value.FileName);
+
+            // Set the path where you want to save the file on the server
+            string filePath = Path.Combine("../Uploads", fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                value.CopyTo(stream);
+            }
+
+            // Save the file path in your SQL database
+            // Assuming you have a PartsDal.Insert method that handles the database insertion
+            return true;
+        }
+
+        public bool AddPart(DAL.DtoModels.PartDTO value)
+        {
+            //if (value.PartImage == null || value.PartImage.Length == 0)
+            //    return false;
+
+            //// Generate a unique filename or use the original filename, depending on your requirements
+            //string fileName = Guid.NewGuid().ToString() + Path.GetExtension(value.PartImage.FileName);
+
+            //// Set the path where you want to save the file on the server
+            //string filePath = Path.Combine("../Uploads", fileName);
+
+            //using (var stream = new FileStream(filePath, FileMode.Create))
             //{
-            //    value.Contact = new UserBL().GetUserById(value.ContactId);
+            //    value.PartImage.CopyTo(stream);
             //}
-            new DAL.PartsDal().Insert(value);
+
+            // Save the file path in your SQL database
+            // Assuming you have a PartsDal.Insert method that handles the database insertion
+            PartForDevice newPart = PartForDevice.FromPartDTO(value);
+            // newPart.PartImage = filePath;
+            new DAL.PartsDal().Insert(newPart);
+
+            return true;
         }
 
         public void remove(int id)
@@ -91,5 +130,20 @@ namespace BL
                 })
                 .Where((partDetails) => partDetails.CategoryId == categoryId);
         }
+
+        ////בשביל לשמור תמונה
+        //public async static void SaveFile(IFormFile postedFile)
+        //{
+        //    var filePath = AppDomain.CurrentDomain.BaseDirectory.Substring(0,
+        //            AppDomain.CurrentDomain.BaseDirectory.LastIndexOf("Server") - 1) +
+        //            "\\Data\\src\\images\\" + postedFile.FileName;
+        //    if (postedFile.Length > 0)
+        //    {
+        //        using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+        //        {
+        //            await postedFile.CopyToAsync(fileStream);
+        //        }
+        //    }
+        //}
     }
 }

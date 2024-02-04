@@ -10,11 +10,11 @@ namespace DTO
     {
         public int PartForDeviceId { get; set; }
 
-        public string? PartName { get; set; }
+        public string PartName { get; set; }
 
-        public string? PartImage { get; set; }
+        public string PartImage { get; set; }
 
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         public decimal Price { get; set; }
 
@@ -22,10 +22,10 @@ namespace DTO
 
         public int CategoryId { get; set; }
 
-        public string PartStatus { get; set; } = null!;
+        public string PartStatus { get; set; }
 
-        public string? PartLocationCity { get; set; }
+        public string PartLocationCity { get; set; }
 
-        public string? PartLocationState { get; set; }
+        public string PartLocationState { get; set; }
     }
 }

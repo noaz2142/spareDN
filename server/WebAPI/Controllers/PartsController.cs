@@ -54,9 +54,15 @@ namespace WebAPI.Controllers
 
         public void Post([FromBody] DAL.DtoModels.PartDTO value)
         {
-            int x = 5;
-            int y = x + 2;
-            new BL.PartBL().AddPart(PartForDevice.FromPartDTO(value));
+            new BL.PartBL().AddPart(value);
+        }
+
+        [HttpPost]
+        [Route("upload")]
+
+        public void Post(IFormFile partImage)
+        {
+            new BL.PartBL().SaveFile(partImage);
         }
 
         // PUT api/<PartsController>/5
