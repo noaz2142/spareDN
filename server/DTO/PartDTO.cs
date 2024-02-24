@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+
     public partial class PartDTO
     {
+
         public int PartForDeviceId { get; set; }
 
         public string PartName { get; set; }
 
-        public string PartImage { get; set; }
+        public byte?[] PartImage { get; set; }
 
         public string Description { get; set; }
 

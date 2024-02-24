@@ -8,13 +8,31 @@ import {
 
 export function PartsView() {
     const [parts, setParts] = useState(null);
+    const [images, setImages] = useState(null);
     const [selectedPart, setSelectedPart] = useState(null);
 
     const { id } = useParams();
 
+    const fetchImages = async () => {
+        if (!parts?.length) {
+            try {
+                axios.get('https://localhost:7082/api/Parts/getImages')
+                    .then(response => setImages(response.data));
+
+            }
+            catch (error) {
+                console.error('Error fetching parts:', error);
+            }
+        }
+    };
+
     useEffect(() => {
         fetchData();
     }, []);
+
+    useEffect(() => {
+        fetchImages();
+    }, [])
 
     const fetchData = async () => {
         if (!parts?.length) {
@@ -29,6 +47,10 @@ export function PartsView() {
         }
     };
 
+    const getImg = (id) => {
+        return images?.find(x => x.partForDeviceId === id)?.fileImage;
+    };
+
     return (
         <>
             <div className="container parts-view">
@@ -37,22 +59,14 @@ export function PartsView() {
                     <div className="row gx-5" id="myItems">
                         {parts ? (
                             parts.map((item) => (
-                                <div className='col-4'>
+                                <div className='col-4' key={item.partForDeviceId}>
                                     <div className="card" key={item.partName} onClick={() => setSelectedPart(item)}>
                                         <div className="card-body">
-                                            {item.partImage &&
+                                            {getImg(item.partForDeviceId) &&
                                                 <img
-                                                    src={(() => {
-                                                        try {
-                                                            return require(`../images/${item.partImage}`);
-                                                        } catch (error) {
-                                                            // image not found
-                                                            console.error(`Error loading image: ${error.message}`);
-                                                            return null;
-                                                        }
-                                                    })()}
+                                                    src={`data:image/png;base64,${getImg(item.partForDeviceId)}`}
+                                                    alt={`Image ${item.partForDeviceId}`}
                                                     width={300}
-                                                    alt="Part Image"
                                                 />
                                             }
                                             <h5 className="card-title">

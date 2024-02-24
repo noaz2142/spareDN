@@ -18,10 +18,9 @@ public partial class PartForDevice
         partForDevice.CategoryId = p.CategoryId;
         partForDevice.ContactId = p.ContactId;
         partForDevice.Description = p.Description;
-        //partForDevice.Contact = null;
-        //partForDevice.Category=null
         return partForDevice;
     }
+
     public int PartForDeviceId { get; set; }
 
     public string? PartName { get; set; }
@@ -39,6 +38,8 @@ public partial class PartForDevice
     public string PartStatus { get; set; } = null!;
 
     public string? PartLocationCity { get; set; }
+
+
 
     public string? PartLocationState { get; set; }
 

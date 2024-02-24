@@ -1470,6 +1470,7 @@
       "BL/1.0.0": {
         "dependencies": {
           "DAL": "1.0.0",
+          "DTO": "1.0.0",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "System.Configuration.ConfigurationManager": "7.0.0",
           "System.Data.SqlClient": "4.8.5"
@@ -1491,6 +1492,11 @@
         },
         "runtime": {
           "DAL.dll": {}
+        }
+      },
+      "DTO/1.0.0": {
+        "runtime": {
+          "DTO.exe": {}
         }
       }
     }
@@ -2550,6 +2556,11 @@
       "sha512": ""
     },
     "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

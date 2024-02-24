@@ -43,3 +43,6 @@ C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\obj\
 C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\obj\Debug\net6.0\refint\BL.dll
 C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\obj\Debug\net6.0\BL.pdb
 C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\obj\Debug\net6.0\ref\BL.dll
+C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\bin\Debug\net6.0\DTO.exe
+C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\bin\Debug\net6.0\DTO.pdb
+C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\BL\bin\Debug\net6.0\DTO.exe.config

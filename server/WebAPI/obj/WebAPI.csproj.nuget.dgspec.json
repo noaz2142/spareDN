@@ -34,6 +34,9 @@
             "projectReferences": {
               "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj": {
                 "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj"
               }
             }
           }
@@ -176,6 +179,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
       }
     },
     "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\WebAPI\\WebAPI.csproj": {

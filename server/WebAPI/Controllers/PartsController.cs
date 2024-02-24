@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DAL.DbModels;
 using Microsoft.AspNetCore.Mvc;
+using DTO;
 
 //For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -63,6 +64,14 @@ namespace WebAPI.Controllers
         public void Post(IFormFile partImage)
         {
             new BL.PartBL().SaveFile(partImage);
+        }
+
+        [HttpGet]
+        [Route("getImages")]
+
+        public PartImage[] GetImages()
+        {
+           return new BL.PartBL().GetPartImages();
         }
 
         // PUT api/<PartsController>/5

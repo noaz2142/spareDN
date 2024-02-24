@@ -197,3 +197,6 @@ C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\
 C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
 C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\bin\Debug\net6.0\DTO.exe
+C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\bin\Debug\net6.0\DTO.pdb
+C:\Users\בת שבע\OneDrive\שולחן העבודה\deviceParts\server\WebAPI\bin\Debug\net6.0\DTO.exe.config

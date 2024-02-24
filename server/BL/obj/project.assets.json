@@ -2085,6 +2085,15 @@
         "runtime": {
           "bin/placeholder/DAL.dll": {}
         }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
       }
     }
   },
@@ -7150,11 +7159,17 @@
       "type": "project",
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "DTO/1.0.0": {
+      "type": "project",
+      "path": "../DTO/DTO.csproj",
+      "msbuildProject": "../DTO/DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "DAL >= 1.0.0",
+      "DTO >= 1.0.0",
       "Microsoft.AspNetCore.Http >= 2.2.2",
       "System.Configuration.ConfigurationManager >= 7.0.0",
       "System.Data.SqlClient >= 4.8.5"
@@ -7194,6 +7209,9 @@
           "projectReferences": {
             "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj"
+            },
+            "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj"
             }
           }
         }

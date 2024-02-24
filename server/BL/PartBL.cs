@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.IO;
 using DAL.DbModels;
 using Microsoft.AspNetCore.Http;
+using DTO;
 
 namespace BL
 {
@@ -39,8 +40,6 @@ namespace BL
 
         public IEnumerable<DAL.DbModels.Category> GetCategoryList()
         {
-            /*  DAL.partDAL partDAL = new DAL.partDAL();*/
-
             return new DAL.PartsDal().GetAllCategory();
         }
 
@@ -63,11 +62,8 @@ namespace BL
             if (value == null || value.Length == 0)
                 return false;
 
-            // Generate a unique filename or use the original filename, depending on your requirements
-            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(value.FileName);
-
             // Set the path where you want to save the file on the server
-            string filePath = Path.Combine("../Uploads", fileName);
+            string filePath = Path.Combine("../Uploads", value.FileName);
 
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
@@ -81,24 +77,7 @@ namespace BL
 
         public bool AddPart(DAL.DtoModels.PartDTO value)
         {
-            //if (value.PartImage == null || value.PartImage.Length == 0)
-            //    return false;
-
-            //// Generate a unique filename or use the original filename, depending on your requirements
-            //string fileName = Guid.NewGuid().ToString() + Path.GetExtension(value.PartImage.FileName);
-
-            //// Set the path where you want to save the file on the server
-            //string filePath = Path.Combine("../Uploads", fileName);
-
-            //using (var stream = new FileStream(filePath, FileMode.Create))
-            //{
-            //    value.PartImage.CopyTo(stream);
-            //}
-
-            // Save the file path in your SQL database
-            // Assuming you have a PartsDal.Insert method that handles the database insertion
             PartForDevice newPart = PartForDevice.FromPartDTO(value);
-            // newPart.PartImage = filePath;
             new DAL.PartsDal().Insert(newPart);
 
             return true;
@@ -117,10 +96,29 @@ namespace BL
 
         }
 
+        // Helper method to retrieve the image from the file system
+        private byte[] GetPartImageFromFileSystem(string filePath)
+        {
+            try
+            {
+                if (filePath?.Length < 1)
+                {
+                    return null;
+                }
+
+                string path = Path.Combine("../Uploads", filePath);
+                // Read the file and convert it to byte array
+                return File.ReadAllBytes(path);
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory(int categoryId)
         {
-            /*  DAL.partDAL partDAL = new DAL.partDAL();*/
-
             return new DAL.PartsDal()
                 .GetAll()
                 .Select((part) =>
@@ -131,19 +129,19 @@ namespace BL
                 .Where((partDetails) => partDetails.CategoryId == categoryId);
         }
 
-        ////בשביל לשמור תמונה
-        //public async static void SaveFile(IFormFile postedFile)
-        //{
-        //    var filePath = AppDomain.CurrentDomain.BaseDirectory.Substring(0,
-        //            AppDomain.CurrentDomain.BaseDirectory.LastIndexOf("Server") - 1) +
-        //            "\\Data\\src\\images\\" + postedFile.FileName;
-        //    if (postedFile.Length > 0)
-        //    {
-        //        using (Stream fileStream = new FileStream(filePath, FileMode.Create))
-        //        {
-        //            await postedFile.CopyToAsync(fileStream);
-        //        }
-        //    }
-        //}
+        public PartImage[] GetPartImages()
+        {
+            return new DAL.PartsDal()
+            .GetAll()
+            .Select((part) =>
+            {
+                PartImage imageFile = new();
+                imageFile.PartForDeviceId = part.PartForDeviceId;
+                imageFile.FileImage = GetPartImageFromFileSystem(part.PartImage);
+                return imageFile;
+            }).ToArray();
+        }
+
+
     }
 }
