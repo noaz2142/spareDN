@@ -38,6 +38,7 @@ export function AddPartForm({ categoryList }) {
     };
 
     const handleUpload = async () => {
+        // קריאת אי פי אי- קוראים לקנטרולר ששומר את התמונה בסרבר
         const _formData = new FormData();
         _formData.append('partImage', formData.partImage);
 
@@ -64,20 +65,20 @@ export function AddPartForm({ categoryList }) {
             partImage: formData.partImage?.name,
             description: formData.partDescription,
             price: formData.price,
-            contactId: 1,
-            categorId: 1,
+            ContactId: 1,
+            CategoryId: formData.categorId,
             partStatus: 'AV', // Set a default value or get it from the user input
             partLocationCity: formData.city,
             partLocationState: formData.state
         };
-
+        // קוראת לאי פי אי לשמור את הנתונים- קוראת לקונטרולר
         axios.post('https://localhost:7082/api/Parts/add', partDetails, {
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(response => {
             if (response.status === 200) {
-                handleUpload().then((res) => alert(res));
+                handleUpload();
             }
         }).catch((ex) => {
             console.log(ex);
@@ -86,6 +87,12 @@ export function AddPartForm({ categoryList }) {
 
 
     const selectedCategory = categoryList?.find(({ categorId }) => categorId === formData.categorId);
+
+    // בק\דיקה שהכפתור יהיה מאופשר רק כשכל הפרטים הנדרשים מלאים
+    const checkFormValid = () => {
+        return formData.categorId && formData.partName && formData.partImage
+            && formData.state && formData.city && formData.price
+    };
 
     return (
         <>
@@ -148,10 +155,14 @@ export function AddPartForm({ categoryList }) {
                                                 </MDBCol>
                                             </MDBRow>
 
-                                            {/* <MDBInput label='Email' type='text' className="mb-4" size="lg" value={formData.email} readOnly /> */}
-
                                             <div className="d-flex justify-content-end pt-3">
-                                                <MDBBtn size="lg" className="ms-2" style={{ backgroundColor: 'hsl(210, 100%, 50%)' }} onClick={handleSaveDetails}>Save Details</MDBBtn>
+                                                <MDBBtn size="lg"
+                                                    className="ms-2" style={{ backgroundColor: 'hsl(210, 100%, 50%)' }}
+                                                    onClick={handleSaveDetails}
+                                                    disabled={!checkFormValid()}
+                                                >
+                                                    Save Details
+                                                </MDBBtn>
                                             </div>
 
                                         </MDBCardBody>
@@ -161,13 +172,13 @@ export function AddPartForm({ categoryList }) {
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>)
-                : <>
-                    <h5>Your part has been saved successfully</h5>
-                    <div className='row'>
-                        <a href="/home" className='col-6'>Go back</a>
-                        <a href="/add-part" className='col-6'>Add another part</a>
+                : <div className='alert-container'>
+                    <h5 className='success-alert'>Your part has been saved successfully</h5>
+                    <div className='links'>
+                        <a href="/home" className=''>Home</a>
+                        <a href="/add-part" className=''>Add another part</a>
                     </div>
-                </>}
+                </div>}
         </>
     );
 }

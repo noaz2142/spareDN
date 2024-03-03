@@ -7,6 +7,7 @@ export const PartItem = (props) => {
         price, partName, description, partImage, contact,
         partLocationCity, partLocationState
     } = selectedItem || {};
+    // פופאפ שמוצג בלחיצה על מוצר מסוים ועליו פרטים נוספים על החלק
     return (
         <>
             <Modal

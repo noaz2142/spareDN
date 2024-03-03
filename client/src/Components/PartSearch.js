@@ -5,6 +5,7 @@ export default function PartSearch(props) {
     const { setParts } = props;
 
     const handleSearch = (search) => {
+        // קוראים לקונטרולר עם השם שהמשתמש הכניס בתיבת חיפוש ומצפים לקבל רשימה של חלקים שמתאימים לחיפוש
         axios.get('https://localhost:7082/api/Parts/getPartByName', { params: { name: search, categoryId: -1 } })
             .then(response => {
                 if (response.status === 200) {

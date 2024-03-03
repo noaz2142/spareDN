@@ -2,14 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-דף הוספת מוצר- ולדיציה שהנתונים מוכנסים כמו שנכון+ עיצוב לדף שמוצג אחרי השמירה
-בדף של רשימת להביא את התמונה שנשמרה כשהוסיפו
 חיפוש לפי עיר- יצרנו עמוד חדש- find-part
 לתקן חיפוש לפי עיר לפי העמודה החדשה שיצרנו- עיר ומדינה למוצר
+חשוב: לשמור את הנתונים של המשתמש+ המוצרים שהוסיף - לשמור גלובאלית בלוקאל סטרויג'
+לתקו באג- לא עובד הפופאפ בלחיצה על מוצר חדש שהוספנו- אין פרטי איש קשר
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directoשגגry, you can run:
 
 ### `npm start`
 

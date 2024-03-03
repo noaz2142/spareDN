@@ -48,6 +48,7 @@ export function SignUp() {
 
   const handleSubmit = () => {
     if (isFormValid()) {
+      // הרשמה- קריאה לאי פי אי כדי לרשום את המשתמש החדש
       axios.post('https://localhost:7082/api/User/sign-up', newUser)
         .then(response => {
           if (response.status === 200) {

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export function CategoryView({categoryList}) {
     const navigate = useNavigate();
+    // הצגת רשימת קטגוריות, בלחיצה על קטגוריה מוצגים המוצרים בקטגוריה
 
     return (
         <div className="container">
@@ -13,6 +14,7 @@ export function CategoryView({categoryList}) {
                             <div className="card" key={item.CategoryId}>
                                 <div className="card-body">
                                     <h5 className="card-title">
+                                        {/* מעבר לרשימת המוצרים בקטגוריה */}
                                         <a onClick={() => navigate(`/parts/${item.categorId}`)}>{item.description}</a>
                                     </h5>
                                 </div>

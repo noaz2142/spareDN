@@ -14,6 +14,7 @@ export function PartsView() {
     const { id } = useParams();
 
     const fetchImages = async () => {
+        // קריאה לקונטרולר שמחזיר את התמונות של החלקים
         if (!parts?.length) {
             try {
                 axios.get('https://localhost:7082/api/Parts/getImages')
@@ -27,16 +28,17 @@ export function PartsView() {
     };
 
     useEffect(() => {
+        // קריאת אי פי אי לשליפת המוצרים
         fetchData();
+        // קריאת אי פי אי לשליפת התמונות של המוצרים
+        fetchImages();
     }, []);
 
-    useEffect(() => {
-        fetchImages();
-    }, [])
 
     const fetchData = async () => {
         if (!parts?.length) {
             try {
+                // קורא לקונטרולר שמחזיר את הרשימה של החלקים
                 axios.get('https://localhost:7082/api/Parts/getPartsByCategory', { params: { categoryId: id } })
                     .then(response => setParts(response.data));
 
@@ -48,6 +50,7 @@ export function PartsView() {
     };
 
     const getImg = (id) => {
+        // מתאימים לכל חלק את התמונה שמתאימה לו
         return images?.find(x => x.partForDeviceId === id)?.fileImage;
     };
 

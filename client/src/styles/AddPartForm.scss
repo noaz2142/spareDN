@@ -11,3 +11,23 @@
     color: hsl(52, 0%, 98%);
   }
 }
+
+.success-alert {
+  align-self: center;
+}
+
+.alert-container {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .links {
+    display: flex;
+    justify-content: space-around;
+    width: fit-content;
+    align-self: center;
+    a {
+      padding: 1rem;
+    }
+  }
+}

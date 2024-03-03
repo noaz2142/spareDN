@@ -23,6 +23,7 @@ export function Login() {
       const params = {
         ...existingUser
       }
+      // קריאה לקונטרולר עם הפרטים של המשתמש - כדי לחבר את המשתמש
       const response = await axios.post('https://localhost:7082/api/User/login', null, { params });
       if (response.data) {
         navigate('/home')
