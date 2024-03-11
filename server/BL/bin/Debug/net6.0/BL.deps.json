@@ -1376,11 +1376,6 @@
         "runtime": {
           "DAL.dll": {}
         }
-      },
-      "DTO/1.0.0": {
-        "runtime": {
-          "DTO.exe": {}
-        }
       }
     }
   },
@@ -2350,11 +2345,6 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

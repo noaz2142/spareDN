@@ -75,7 +75,8 @@ export function PartsView() {
                                             <h5 className="card-title">
                                                 {item.partName}
                                             </h5>
-                                            <h6 className="card-subtitle mb-2 text-muted">{item.price} NIS</h6>
+                                            <h6 className="card-subtitle mb-2 text-muted">Model: {item.model}</h6>
+                                            <h6 className="card-subtitle mb-2 text-muted">Brand: {item.brand}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -86,10 +87,12 @@ export function PartsView() {
                     </div>
                 </div>
             </div>
-            {selectedPart && <PartItem
-                selectedItem={selectedPart}
-                handleClose={() => setSelectedPart(null)}
-            />}
+            {selectedPart &&
+                <PartItem
+                    images={images}
+                    selectedItem={selectedPart}
+                    handleClose={() => setSelectedPart(null)}
+                />}
         </>
     );
 }

@@ -2,11 +2,15 @@ import React from "react";
 import Modal from 'react-bootstrap/Modal';
 
 export const PartItem = (props) => {
-    const { selectedItem, handleClose } = props;
+    const { selectedItem, handleClose, images } = props;
     const {
-        price, partName, description, partImage, contact,
-        partLocationCity, partLocationState
+        model, partName, description, contact,
+        partLocationCity, partLocationState, brand, device,
+        partForDeviceId
     } = selectedItem || {};
+
+    const image = images?.find(x => x.partForDeviceId === partForDeviceId)?.fileImage;
+    console.log('filename', image);
     // פופאפ שמוצג בלחיצה על מוצר מסוים ועליו פרטים נוספים על החלק
     return (
         <>
@@ -31,8 +35,10 @@ export const PartItem = (props) => {
                 <Modal.Body>
                     <div className="row">
                         <div className="col-6">
-                            <div>Description: {description}</div>
-                            <div>Price: {price} NIS</div>
+                            <div><b>Model:</b> {model}</div>
+                            <div><b>Description:</b> {description}</div>
+                            <div><b>Matching Device:</b> {device}</div>
+                            <div><b>Brand:</b> {brand}</div>
                             <div className="part-contact-details">
                                 <div className="title">
                                     Contact Details:
@@ -72,7 +78,11 @@ export const PartItem = (props) => {
                             </div>
                         </div>
                         <div className="col-6">
-                            {partImage && <img src={require(`../images/${partImage}`)} width={250} />}
+                            <img
+                                src={`data:image/png;base64,${image}`}
+                                alt={`Image ${partForDeviceId}`}
+                                width={300}
+                            />
                         </div>
                     </div>
                 </Modal.Body>

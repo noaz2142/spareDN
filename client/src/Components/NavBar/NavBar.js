@@ -4,10 +4,10 @@ import menuItems from "./MenuItems";
 import logo from '../../images/Logo.png';
 import { useNavigate } from 'react-router-dom';
 
-export const Navbar = () => {
+export const Navbar = ({ currentUser }) => {
     const [active, setActive] = useState(false);
     const navigate = useNavigate();
-    
+
     const handleClick = () => {
         setActive(!active);
     };
@@ -31,7 +31,10 @@ export const Navbar = () => {
                     );
                 })}
             </ul>
-            <Button onClick={() => navigate('/signup')}>SIGN UP</Button>
+            {currentUser?.userName && <span className="user-name">Hi {currentUser?.userName}</span>}
+            <Button onClick={() => navigate('/signup')}>
+                SIGN UP
+            </Button>
         </nav>
     );
 };

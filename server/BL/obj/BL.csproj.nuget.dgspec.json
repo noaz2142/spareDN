@@ -188,7 +188,11 @@
         "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DTO\\DTO.csproj",
         "frameworks": {
           "net48": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\בת שבע\\OneDrive\\שולחן העבודה\\deviceParts\\server\\DAL\\DAL.csproj"
+              }
+            }
           }
         }
       },

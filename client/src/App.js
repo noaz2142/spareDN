@@ -8,6 +8,7 @@ import axios from 'axios';
 
 function App() {
   const [categoryList, setCategorys] = useState(null);
+  const currentUser = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     fetchCategory();
@@ -22,11 +23,11 @@ function App() {
     }
   };
 
- // כל העמודים בפרויקט
+  // כל העמודים בפרויקט
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar currentUser={currentUser}/>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
@@ -34,7 +35,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/category" element={<CategoryView categoryList={categoryList} />} />
           <Route path="/find-part" element={<FindPart />} />
-          <Route path="/add-part" element={<AddPartForm categoryList={categoryList} />} />
+          <Route path="/add-part" element={<AddPartForm categoryList={categoryList} currentUser={currentUser}/>}  />
           <Route path="parts/:id" element={<PartsView />} />
         </Routes>
       </BrowserRouter >

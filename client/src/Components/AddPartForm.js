@@ -7,7 +7,9 @@ import {
 import axios from 'axios';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
-export function AddPartForm({ categoryList }) {
+export function AddPartForm(props) {
+    const { categoryList, currentUser } = props;
+    console.log('dwd', props);
     const [formData, setFormData] = useState({
         partName: '',
         partDescription: '',
@@ -64,10 +66,11 @@ export function AddPartForm({ categoryList }) {
             partName: formData.partName,
             partImage: formData.partImage?.name,
             description: formData.partDescription,
-            price: formData.price,
-            ContactId: 1,
-            CategoryId: formData.categorId,
-            partStatus: 'AV', // Set a default value or get it from the user input
+            model: formData.model,
+            brand: formData.brand,
+            device: formData.device,
+            contactId: currentUser?.userId,
+            categoryId: formData.categorId,
             partLocationCity: formData.city,
             partLocationState: formData.state
         };
@@ -91,7 +94,7 @@ export function AddPartForm({ categoryList }) {
     // בק\דיקה שהכפתור יהיה מאופשר רק כשכל הפרטים הנדרשים מלאים
     const checkFormValid = () => {
         return formData.categorId && formData.partName && formData.partImage
-            && formData.state && formData.city && formData.price
+            && formData.state && formData.city && formData.model
     };
 
     return (
@@ -114,18 +117,29 @@ export function AddPartForm({ categoryList }) {
                                             <MDBTypography tag="h3" className="mb-4 text-uppercase">Part Info</MDBTypography>
                                             <MDBRow>
                                                 <MDBCol md="6" className="mb-4">
-                                                    <MDBInput label='Part name' type='text' size="lg" name="partName" value={formData.partName} onChange={handleInputChange} />
+                                                    <MDBInput label='Device Name' type='text' size="lg" name="device" value={formData.device} onChange={handleInputChange} />
                                                 </MDBCol>
                                                 <MDBCol md="6" className="mb-4">
+                                                    <MDBInput label='Model' type='text' size="lg" name="model" value={formData.model} onChange={handleInputChange} />
+                                                </MDBCol>
+                                            </MDBRow>
+                                            <MDBRow>
+                                                <MDBCol md="6" className="mb-4">
+                                                    <MDBInput label='Brand' type='text' size="lg" name="brand" value={formData.brand} onChange={handleInputChange} />
+                                                </MDBCol>
+                                            </MDBRow>
+                                            <hr />
+                                            <MDBRow>
+                                                <MDBCol md="6" className="mb-4">
+                                                    <MDBInput label='Part name' type='text' size="lg" name="partName" value={formData.partName} onChange={handleInputChange} />
+                                                </MDBCol>
+                                            </MDBRow>
+                                            <MDBRow>
+                                                <MDBCol md="12 q" className="mb-12">
                                                     <MDBInput label='Part description' type='text' size="lg" name="partDescription" value={formData.partDescription} onChange={handleInputChange} />
                                                 </MDBCol>
                                             </MDBRow>
 
-                                            <MDBRow>
-                                                <MDBCol md="6" className="mb-4">
-                                                    <MDBInput label='Price' type='text' size="lg" name="price" value={formData.price} onChange={handleInputChange} />
-                                                </MDBCol>
-                                            </MDBRow>
                                             <MDBRow>
                                                 <MDBInput label='Part image' type='file' size="lg" name="partImage" onChange={handleInputChange} />
                                             </MDBRow>

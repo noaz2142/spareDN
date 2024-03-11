@@ -7,7 +7,7 @@ import {
   MDBIcon
 }
   from 'mdb-react-ui-kit';
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export function Login() {
@@ -26,7 +26,9 @@ export function Login() {
       // קריאה לקונטרולר עם הפרטים של המשתמש - כדי לחבר את המשתמש
       const response = await axios.post('https://localhost:7082/api/User/login', null, { params });
       if (response.data) {
-        navigate('/home')
+        navigate('/home');
+        localStorage.setItem('user', JSON.stringify(response.data || ''));
+        window.location.reload();
       } else {
         throw new Error('Incorrect User Name or Password');
       }

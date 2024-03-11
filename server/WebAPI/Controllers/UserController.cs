@@ -51,14 +51,14 @@ namespace WebAPI.Controllers
         //}
         [HttpPost()]
         [Route("sign-up")]
-        public StatusCodeResult SignUp([FromBody] DAL.DbModels.User newUser)
+        public User? SignUp([FromBody] DAL.DbModels.User newUser)
         {
             bool status = new BL.UserBL().SaveNewUser(newUser);
             if (status)
             {
-                return StatusCode(200);
+                return newUser;
             }
-            else { return StatusCode(500); }
+            else { return null; }
         }
 
         [HttpPost()]

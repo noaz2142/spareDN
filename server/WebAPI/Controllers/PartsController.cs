@@ -1,7 +1,7 @@
 ﻿using DAL;
 using DAL.DbModels;
 using Microsoft.AspNetCore.Mvc;
-using DTO;
+using DAL.DtoModels;
 
 //For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

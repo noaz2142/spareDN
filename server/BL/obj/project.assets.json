@@ -2088,6 +2088,9 @@
       },
       "DTO/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/DTO.dll": {}
         },

@@ -44,8 +44,23 @@ public partial class DevicePartsContext : DbContext
 
             entity.ToTable("PartForDevice");
 
+            entity.Property(e => e.Brand)
+                .HasMaxLength(200)
+                .IsUnicode(false);
             entity.Property(e => e.CategoryId).HasDefaultValueSql("((4))");
             entity.Property(e => e.Description)
+                .HasMaxLength(2000)
+                .IsUnicode(false);
+            entity.Property(e => e.Device)
+                .HasMaxLength(2000)
+                .IsUnicode(false);
+            entity.Property(e => e.IsAvailable)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("((1))")
+                .IsFixedLength()
+                .HasColumnName("isAvailable");
+            entity.Property(e => e.Model)
                 .HasMaxLength(2000)
                 .IsUnicode(false);
             entity.Property(e => e.PartImage)
@@ -63,13 +78,6 @@ public partial class DevicePartsContext : DbContext
             entity.Property(e => e.PartName)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.PartStatus)
-                .HasMaxLength(2)
-                .IsUnicode(false)
-                .HasDefaultValueSql("('AV')")
-                .IsFixedLength()
-                .HasColumnName("partStatus");
-            entity.Property(e => e.Price).HasColumnType("decimal(25, 0)");
 
             entity.HasOne(d => d.Category).WithMany(p => p.PartForDevices)
                 .HasForeignKey(d => d.CategoryId)

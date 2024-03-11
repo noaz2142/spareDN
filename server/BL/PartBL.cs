@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.IO;
 using DAL.DbModels;
 using Microsoft.AspNetCore.Http;
-using DTO;
+using DAL.DtoModels;
 
 namespace BL
 {
@@ -22,7 +22,7 @@ namespace BL
 
                 // saving image
                 PartsDal d = new PartsDal();
-                d.Insert(PartForDevice.FromPartDTO(p));
+                d.Insert(p.FromPartDTO());
                 return true;
             }
             catch
@@ -75,9 +75,9 @@ namespace BL
             return true;
         }
 
-        public bool AddPart(DAL.DtoModels.PartDTO value)
+        public bool AddPart(PartDTO value)
         {
-            PartForDevice newPart = PartForDevice.FromPartDTO(value);
+            PartForDevice newPart = value.FromPartDTO();
             new DAL.PartsDal().Insert(newPart);
 
             return true;

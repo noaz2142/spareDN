@@ -51,8 +51,10 @@ export function SignUp() {
       // הרשמה- קריאה לאי פי אי כדי לרשום את המשתמש החדש
       axios.post('https://localhost:7082/api/User/sign-up', newUser)
         .then(response => {
-          if (response.status === 200) {
+          if (response.status === 200 && response.data) {
             setShowSuccess(true);
+            localStorage.setItem('user', JSON.stringify(response.data || ''));
+            window.location.reload();
           }
         })
         .catch((ex) => {
