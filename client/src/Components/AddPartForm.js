@@ -3,27 +3,33 @@ import {
     MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBContainer,
     MDBInput, MDBRow, MDBTypography,
 } from 'mdb-react-ui-kit';
-
+import { useParams } from 'react-router';
 import axios from 'axios';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 export function AddPartForm(props) {
-    const { categoryList, currentUser } = props;
-    console.log('dwd', props);
+    const { categoryList, currentUser, parts } = props;
+    const { itemId } = useParams();
+    const defaultItem = itemId ? parts?.find(x => x.partForDeviceId === +itemId) : {};
+
     const [formData, setFormData] = useState({
-        partName: '',
-        partDescription: '',
+        partName: defaultItem?.partName || '',
+        partDescription: defaultItem?.description || '',
         partImage: '',
-        state: 'Israel',
-        city: '',
-        categorId: null
+        state: defaultItem?.partLocationState || currentUser?.state || '',
+        city: defaultItem?.partLocationCity || currentUser?.city || '',
+        categorId: defaultItem?.categoryId || null,
+        model: defaultItem?.model || '',
+        brand: defaultItem?.brand || '',
     });
     const [isDetailsSaved, setDetailsSaved] = useState(false);
+    const [isImageChanged, setImageChanged] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         let _value = value;
         if (name === 'partImage') {
+            setImageChanged(true);
             _value = e.target.files?.[0];
         }
         setFormData((prevData) => ({
@@ -43,7 +49,6 @@ export function AddPartForm(props) {
         // קריאת אי פי אי- קוראים לקנטרולר ששומר את התמונה בסרבר
         const _formData = new FormData();
         _formData.append('partImage', formData.partImage);
-
         try {
             const response = await axios.post('https://localhost:7082/api/Parts/upload', _formData, {
                 headers: {
@@ -62,7 +67,7 @@ export function AddPartForm(props) {
 
     const handleSaveDetails = () => {
         const partDetails = {
-            partForDeviceId: 0,
+            partForDeviceId: itemId || 0,
             partName: formData.partName,
             partImage: formData.partImage?.name,
             description: formData.partDescription,
@@ -72,10 +77,16 @@ export function AddPartForm(props) {
             contactId: currentUser?.userId,
             categoryId: formData.categorId,
             partLocationCity: formData.city,
-            partLocationState: formData.state
+            partLocationState: formData.state,
+            isAvailable: '1'
         };
-        // קוראת לאי פי אי לשמור את הנתונים- קוראת לקונטרולר
-        axios.post('https://localhost:7082/api/Parts/add', partDetails, {
+        const method = itemId ? 'put' : 'post'; // Determine HTTP method based on itemId
+        const path = itemId ? 'Parts/update' : 'Parts/add'; // Determine API path based on itemId
+
+        axios({
+            method: method, // Use determined method
+            url: `https://localhost:7082/api/${path}`,
+            data: partDetails,
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -88,7 +99,6 @@ export function AddPartForm(props) {
         });
     };
 
-
     const selectedCategory = categoryList?.find(({ categorId }) => categorId === formData.categorId);
 
     // בק\דיקה שהכפתור יהיה מאופשר רק כשכל הפרטים הנדרשים מלאים
@@ -96,6 +106,21 @@ export function AddPartForm(props) {
         return formData.categorId && formData.partName && formData.partImage
             && formData.state && formData.city && formData.model
     };
+
+    const displayImage = () => {
+        try {
+            if (itemId && !isImageChanged && defaultItem?.image) {
+                return `data:image/png;base64,${defaultItem?.image}`;
+            }
+            if (formData.partImage) {
+                return URL.createObjectURL(formData.partImage);
+            }
+            return "https://mdbcdn.b-cdn.net/img/Others/extended-example/delivery.webp";
+        } catch (ex) {
+            console.error(ex);
+            return "https://mdbcdn.b-cdn.net/img/Others/extended-example/delivery.webp";
+        }
+    }
 
     return (
         <>
@@ -106,11 +131,7 @@ export function AddPartForm(props) {
                             <MDBCard className="my-4 shadow-3">
                                 <MDBRow className="g-0">
                                     <MDBCol md="6" className="d-xl-block bg-image">
-                                        <MDBCardImage src={
-                                            formData.partImage
-                                                ? URL.createObjectURL(formData.partImage)
-                                                : "https://mdbcdn.b-cdn.net/img/Others/extended-example/delivery.webp"
-                                        } alt="Sample photo" fluid />
+                                        <MDBCardImage src={displayImage()} alt="Sample photo" fluid />
                                     </MDBCol>
                                     <MDBCol md="6">
                                         <MDBCardBody className="p-md-5 text-black">

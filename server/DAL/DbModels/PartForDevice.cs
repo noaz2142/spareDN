@@ -29,6 +29,8 @@ public partial class PartForDevice
 
     public string? Device { get; set; }
 
+    public DateTime? CreationDate { get; set; }
+
     public virtual Category Category { get; set; } = null!;
 
     public virtual User Contact { get; set; } = null!;

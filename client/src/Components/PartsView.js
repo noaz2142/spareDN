@@ -3,19 +3,21 @@ import axios from "axios";
 import PartSearch from './PartSearch';
 import { PartItem } from './index';
 import {
-    useParams
+    useParams, useNavigate
 } from "react-router-dom";
 
-export function PartsView() {
-    const [parts, setParts] = useState(null);
+export function PartsView({
+    currentUser, hideSearch, parts, setParts, editUserParts
+}) {
     const [images, setImages] = useState(null);
     const [selectedPart, setSelectedPart] = useState(null);
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const fetchImages = async () => {
         // קריאה לקונטרולר שמחזיר את התמונות של החלקים
-        if (!parts?.length) {
+        if (!images?.length) {
             try {
                 axios.get('https://localhost:7082/api/Parts/getImages')
                     .then(response => setImages(response.data));
@@ -34,12 +36,12 @@ export function PartsView() {
         fetchImages();
     }, []);
 
-
     const fetchData = async () => {
         if (!parts?.length) {
             try {
                 // קורא לקונטרולר שמחזיר את הרשימה של החלקים
-                axios.get('https://localhost:7082/api/Parts/getPartsByCategory', { params: { categoryId: id } })
+                axios.get('https://localhost:7082/api/Parts/getPartsByCategory',
+                    { params: { categoryId: id, userId: currentUser?.userId } })
                     .then(response => setParts(response.data));
 
             }
@@ -54,16 +56,38 @@ export function PartsView() {
         return images?.find(x => x.partForDeviceId === id)?.fileImage;
     };
 
+    const handleCardSelection = (item) => {
+        if (!editUserParts) {
+            setSelectedPart(item)
+        }
+    };
+
+    const onPartEdit = (itemId) => {
+        const partIndex = parts.findIndex(x => x.partForDeviceId === itemId);
+        if (partIndex >= 0) {
+            parts[partIndex].image = getImg(itemId);
+            setParts(parts);
+        }
+        navigate(`/add-part/${itemId}`);
+    };
+
     return (
         <>
             <div className="container parts-view">
-                <PartSearch setParts={(updatedPartList) => setParts(updatedPartList)} />
+                {!hideSearch &&
+                    <PartSearch setParts={(updatedPartList) => setParts(updatedPartList)} currentUser={currentUser} />
+                }
                 <div className='container'>
                     <div className="row gx-5" id="myItems">
                         {parts ? (
                             parts.map((item) => (
                                 <div className='col-4' key={item.partForDeviceId}>
-                                    <div className="card" key={item.partName} onClick={() => setSelectedPart(item)}>
+                                    <div className="card" key={item.partName} onClick={() => handleCardSelection(item)}>
+                                        {editUserParts &&
+                                            <div className='edit-icon' role='button' onClick={() => onPartEdit(item.partForDeviceId)}>
+                                                <i class="bi bi-pencil" />
+                                            </div>
+                                        }
                                         <div className="card-body">
                                             {getImg(item.partForDeviceId) &&
                                                 <img

@@ -20,10 +20,15 @@ const menuItems = [
     cName: "nav-links"
   },
   {
+    title: "My Products",
+    url: "/my-products",
+    cName: "nav-links"
+  },
+  {
     title: "Sign up",
     url: "/signup",
     cName: "nav-links-mobile"
-  }
+  },
 ];
 
 export default menuItems;

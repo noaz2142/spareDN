@@ -2,11 +2,13 @@ import React from 'react';
 import axios from "axios";
 
 export default function PartSearch(props) {
-    const { setParts } = props;
+    const { setParts, currentUser } = props;
 
     const handleSearch = (search) => {
         // קוראים לקונטרולר עם השם שהמשתמש הכניס בתיבת חיפוש ומצפים לקבל רשימה של חלקים שמתאימים לחיפוש
-        axios.get('https://localhost:7082/api/Parts/getPartByName', { params: { name: search, categoryId: -1 } })
+        if (search) {
+            axios.get('https://localhost:7082/api/Parts/getPartByName',
+                { params: { name: search, categoryId: -1, userId: currentUser?.userId } })
             .then(response => {
                 if (response.status === 200) {
                     setParts(response?.data || {});
@@ -15,6 +17,7 @@ export default function PartSearch(props) {
             .catch((err) => {
                 console.error(err);
             });
+        }
     }
 
     return (

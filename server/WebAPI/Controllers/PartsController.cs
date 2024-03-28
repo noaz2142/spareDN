@@ -28,17 +28,33 @@ namespace WebAPI.Controllers
 
         [HttpGet]
         [Route("getPartsByCategory")]
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory([FromQuery] int categoryId)
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory([FromQuery] int categoryId, [FromQuery] int userId)
         {
-            return new BL.PartBL().GetPartsByCategory(categoryId);
+            return new BL.PartBL().GetPartsByCategory(categoryId, userId);
         }
 
         // GET: api/<PartsController>
         [HttpGet]
         [Route("getPartByName")]
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName([FromQuery] string name, [FromQuery] int categoryId)
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName([FromQuery] string name, [FromQuery] int categoryId, [FromQuery] int userId)
         {
-            return new BL.PartBL().GetPartsByName(name, categoryId);
+            return new BL.PartBL().GetPartsByName(name, categoryId, userId);
+        }
+
+        // GET: api/<PartsController>
+        [HttpGet]
+        [Route("getUserParts")]
+        public IEnumerable<DAL.DbModels.PartForDevice> GetUSerParts([FromQuery] int userId)
+        {
+            return new BL.PartBL().GetUserParts(userId);
+        }
+
+        // GET: api/<PartsController>
+        [HttpGet]
+        [Route("search")]
+        public IEnumerable<DAL.DtoModels.PartDTO> FreeSearch([FromQuery] string searchStr)
+        {
+            return new BL.PartBL().FreeSearch(searchStr);
         }
 
         // GET api/<PartsController>/5
@@ -71,12 +87,13 @@ namespace WebAPI.Controllers
 
         public PartImage[] GetImages()
         {
-           return new BL.PartBL().GetPartImages();
+            return new BL.PartBL().GetPartImages();
         }
 
         // PUT api/<PartsController>/5
         [HttpPut]
-        public void update(PartForDevice value)
+        [Route("update")]
+        public void update(PartDTO value)
         {
             new BL.PartBL().UpdatePart(value);
         }

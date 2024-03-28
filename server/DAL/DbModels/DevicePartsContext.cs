@@ -48,6 +48,10 @@ public partial class DevicePartsContext : DbContext
                 .HasMaxLength(200)
                 .IsUnicode(false);
             entity.Property(e => e.CategoryId).HasDefaultValueSql("((4))");
+            entity.Property(e => e.CreationDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("date")
+                .HasColumnName("creationDate");
             entity.Property(e => e.Description)
                 .HasMaxLength(2000)
                 .IsUnicode(false);

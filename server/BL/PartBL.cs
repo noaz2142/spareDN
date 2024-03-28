@@ -31,9 +31,30 @@ namespace BL
             }
 
         }
+
+        private IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCreationDate(int userId)
+        {
+            DAL.PartsDal partDal = new();
+            List<DAL.DbModels.PartForDevice> partList = partDal.GetAll().ToList();
+            DAL.DbModels.PartForDevice partList2 = partList.FirstOrDefault(x => x.ContactId == userId);
+            bool isNewUser = partList.FirstOrDefault(x => x.ContactId == userId) == null;
+            if (!isNewUser)
+            {
+                return partList;
+            }
+            return partList.Where(p => p.CreationDate?.Date == null || p.CreationDate?.Date < DateTime.Today.Date.AddDays(-2));
+        }
+
+        public IEnumerable<DAL.DbModels.PartForDevice> GetUserParts(int userId)
+        {
+            DAL.PartsDal partDal = new();
+            List<DAL.DbModels.PartForDevice> partList = partDal.GetAll().ToList();
+            DAL.DbModels.PartForDevice partList2 = partList.FirstOrDefault(x => x.ContactId == userId);
+            return partList.Where(x => x.ContactId == userId);
+        }
+
         public IEnumerable<DAL.DbModels.PartForDevice> GetParts()
         {
-            /*  DAL.partDAL partDAL = new DAL.partDAL();*/
 
             return new DAL.PartsDal().GetAll();
         }
@@ -43,18 +64,18 @@ namespace BL
             return new DAL.PartsDal().GetAllCategory();
         }
 
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName(string nameToSearch, int categoryId)
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByName(string nameToSearch, int categoryId, int userId)
         {
             if (categoryId != -1)
             {
-                return GetPartsByCategory(categoryId).Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
+                return GetPartsByCategory(categoryId, userId).Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
             }
-            return new DAL.PartsDal().GetAll().Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
+            return GetPartsByCreationDate(userId).Where(x => x.PartName.Contains(nameToSearch, StringComparison.OrdinalIgnoreCase));
         }
 
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCity(string city, string state = "Israel", int categoryId = -1)
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCity(string city, string state = "Israel", int categoryId = -1, int userId = -1)
         {
-            return GetPartsByCategory(categoryId).Where(x => x.Contact.City.Contains(city, StringComparison.OrdinalIgnoreCase));
+            return GetPartsByCategory(categoryId, userId).Where(x => x.Contact.City.Contains(city, StringComparison.OrdinalIgnoreCase));
         }
 
         public bool SaveFile(IFormFile value)
@@ -90,9 +111,9 @@ namespace BL
             new DAL.PartsDal().Delete(p);
         }
 
-        public void UpdatePart(PartForDevice value)
+        public void UpdatePart(PartDTO value)
         {
-            new DAL.PartsDal().Update(value);
+            new DAL.PartsDal().Update(value.FromPartDTO());
 
         }
 
@@ -117,10 +138,9 @@ namespace BL
             }
         }
 
-        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory(int categoryId)
+        public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory(int categoryId, int userId)
         {
-            return new DAL.PartsDal()
-                .GetAll()
+            return GetPartsByCreationDate(userId)
                 .Select((part) =>
                 {
                     part.Contact = new BL.UserBL().GetUserById(part.ContactId);
@@ -140,6 +160,36 @@ namespace BL
                 imageFile.FileImage = GetPartImageFromFileSystem(part.PartImage);
                 return imageFile;
             }).ToArray();
+        }
+
+        public List<PartDTO> FreeSearch(string searchStr)
+        {
+            IEnumerable<PartForDevice> parts = GetParts();
+            var searchWords = searchStr.ToLowerInvariant().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            var result = new List<PartDTO>();
+
+            foreach (var part in parts)
+            {
+                PartDTO partDTO = PartDTO.FromPartDal(part);
+                var partHashTable = partDTO.ToHashtable();
+
+                int matchCount = 0;
+                foreach (var word in searchWords)
+                {
+                    if (partHashTable.Values.Cast<string>().Any(value => value != null && value.ToLower().Contains(word.ToLower())))
+                    {
+                        matchCount++;
+                    }
+                }
+
+                if (matchCount > 0)
+                {
+                    partDTO.MatchCount = matchCount;
+                    result.Add(partDTO);
+                }
+            }
+
+            return result.OrderByDescending(x => x.MatchCount).ToList();
         }
 
 

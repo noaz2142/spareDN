@@ -23,3 +23,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.edit-icon {
+  padding: 1rem;
+  border-radius: 50%;
+  // border: 1px solid gray;
+  align-self: flex-end;
+  background-color: rgb(233, 230, 230);
+  margin: 1rem 1rem 0;
+}
