@@ -77,9 +77,9 @@ namespace WebAPI.Controllers
         [HttpPost]
         [Route("upload")]
 
-        public void Post(IFormFile partImage)
+        public bool Post(IFormFile partImage)
         {
-            new BL.PartBL().SaveFile(partImage);
+            return new BL.PartBL().SaveFile(partImage);
         }
 
         [HttpGet]
@@ -98,11 +98,17 @@ namespace WebAPI.Controllers
             new BL.PartBL().UpdatePart(value);
         }
 
-        // DELETE api/<PartsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
             new BL.PartBL().remove(id);
+        }
+
+
+        [HttpPut("ChangeAvailability")]
+        public void ChangeAvailaibility(int id)
+        {
+            new BL.PartBL().ChangePartAvailability(id);
         }
     }
 }

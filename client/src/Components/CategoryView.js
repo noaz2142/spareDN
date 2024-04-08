@@ -6,7 +6,7 @@ export function CategoryView({categoryList}) {
     // הצגת רשימת קטגוריות, בלחיצה על קטגוריה מוצגים המוצרים בקטגוריה
 
     return (
-        <div className="container">
+        <div className="category-container">
             <div className="row" id="myItems">
                 <div className="col-sm-12 mb-3">
                     {categoryList ? (

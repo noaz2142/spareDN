@@ -5,12 +5,16 @@ import { PartItem } from './index';
 import {
     useParams, useNavigate
 } from "react-router-dom";
+import CommonDialog from './CommonDialog';
 
 export function PartsView({
-    currentUser, hideSearch, parts, setParts, editUserParts
+    currentUser, hideSearch, parts, setParts, editUserParts,
+    getUserProducts
 }) {
     const [images, setImages] = useState(null);
     const [selectedPart, setSelectedPart] = useState(null);
+    const [showRemoveWarning, setShowRemoveWarning] = useState(false);
+    const [removedPartId, setRemovedPartId] = useState(null);
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -71,8 +75,31 @@ export function PartsView({
         navigate(`/add-part/${itemId}`);
     };
 
+    const removePart = async () => {
+        if (removedPartId) {
+            try {
+                const path = `https://localhost:7082/api/Parts/ChangeAvailability?id=${removedPartId}`;
+                await axios.put(path);
+                if (getUserProducts) {
+                    getUserProducts();
+                }
+                setShowRemoveWarning(false);
+            }
+            catch (error) {
+                console.error('Error fetching parts:', error);
+            }
+        }
+    }
+
     return (
         <>
+            <CommonDialog title="Delete Product"
+                showDialog={showRemoveWarning}
+                handleConfirm={removePart}
+                handleCancel={() => setShowRemoveWarning(false)}
+                message='Are you sure you want to delete this product?'
+            />
+
             <div className="container parts-view">
                 {!hideSearch &&
                     <PartSearch setParts={(updatedPartList) => setParts(updatedPartList)} currentUser={currentUser} />
@@ -84,9 +111,14 @@ export function PartsView({
                                 <div className='col-4' key={item.partForDeviceId}>
                                     <div className="card" key={item.partName} onClick={() => handleCardSelection(item)}>
                                         {editUserParts &&
-                                            <div className='edit-icon' role='button' onClick={() => onPartEdit(item.partForDeviceId)}>
-                                                <i class="bi bi-pencil" />
-                                            </div>
+                                            <>
+                                                <div className='delete-icon' role='button' onClick={() => { setRemovedPartId(item.partForDeviceId); setShowRemoveWarning(true); }}>
+                                                    <i class="bi bi-trash3-fill" />
+                                                </div>
+                                                <div className='edit-icon' role='button' onClick={() => onPartEdit(item.partForDeviceId)}>
+                                                    <i class="bi bi-pencil" />
+                                                </div>
+                                            </>
                                         }
                                         <div className="card-body">
                                             {getImg(item.partForDeviceId) &&

@@ -34,7 +34,11 @@ export function MyProducts({ currentUser, setParts }) {
     return (
         <div>
             <h3>my Products</h3>
-            {userParts?.length > 0 && <PartsView parts={userParts} setParts={setUserParts} editUserParts />}
+            {userParts?.length > 0 &&
+                <PartsView
+                    parts={userParts} setParts={setUserParts}
+                    editUserParts hideSearch
+                    getUserProducts={getUserProducts} />}
         </div>
     );
 }

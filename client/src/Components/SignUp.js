@@ -126,9 +126,9 @@ export function SignUp() {
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I want to join the newsletter' />
           </div>
 
-          <MDBBtn className="mb-4 w-100" onClick={handleSubmit} disabled={!isFormValid()}>Sign up</MDBBtn>
+          <MDBBtn className="mb-4 w-100 btn btn-primary" onClick={handleSubmit} disabled={!isFormValid()}>Sign up</MDBBtn>
           <div className="text-center">
-            <p>Already a member? <a href='' onClick={() => navigate('/login')}>Sign in</a></p>
+            <p>Already a member? <a className='register-link' href='' onClick={() => navigate('/login')}>Sign in</a></p>
           </div>
         </MDBContainer>
       )}

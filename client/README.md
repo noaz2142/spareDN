@@ -8,6 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 לבדוק את ההרשמה והכניסה שעובד תקין
 לתקו באג- לא עובד הפופאפ בלחיצה על מוצר חדש שהוספנו- אין פרטי איש קשר
 
+לעשות מחיקה של מוצר בסי ובריאקט
+לסנן את המוצרים שאם המוצר זמין יראה אותו 
 ## Available Scripts
 
 In the project directoשגגry, you can run:

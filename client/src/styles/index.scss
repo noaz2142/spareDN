@@ -1,6 +1,27 @@
-@import './login.scss';
-@import './Button.scss';
-@import './NavBar.scss';
-@import './PartsView.scss';
-@import './AddPartForm.scss';
-@import './FindPart.scss';
+@import "./login.scss";
+@import "./Button.scss";
+@import "./NavBar.scss";
+@import "./PartsView.scss";
+@import "./AddPartForm.scss";
+@import "./FindPart.scss";
+
+.home-page {
+    display: flex;
+    background-color: black;
+  .hands-img {
+    height: 800px;
+  }
+  .logo-img {
+    // height: 150px;
+    transform: translate(-50%, -50%) rotate(90deg);
+    align-self: center;
+    padding-bottom: 20rem;
+    padding-left: 20rem;
+  }
+}
+
+.register-link {
+    color: red;
+}
+
+

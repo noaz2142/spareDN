@@ -62,18 +62,18 @@ export function Login() {
 
       <div className="d-flex justify-content-between mx-3 mb-4">
         <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-        <a href="!#">Forgot password?</a>
+        <a className='register-link' href="!#">Forgot password?</a>
       </div>
 
       <MDBBtn
         disabled={!existingUser.password || !existingUser.userName}
-        className="mb-4"
+        className="btn btn-primary mb-4"
         onClick={submitLogin}
       >
         Sign in
       </MDBBtn>
       <div className="text-center">
-        <p>Not a member? <a href='' onClick={() => navigate('/signup')}>Register</a></p>
+        <p>Not a member? <a href='' className='register-link' onClick={() => navigate('/signup')}>Register</a></p>
         <p>or sign up with:</p>
 
         <div className='d-flex justify-content-between mx-auto' style={{ width: '40%' }}>

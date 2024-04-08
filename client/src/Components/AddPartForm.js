@@ -14,16 +14,19 @@ export function AddPartForm(props) {
 
     const [formData, setFormData] = useState({
         partName: defaultItem?.partName || '',
-        partDescription: defaultItem?.description || '',
+        partDescription: defaultItem?.description || '',    
         partImage: '',
         state: defaultItem?.partLocationState || currentUser?.state || '',
         city: defaultItem?.partLocationCity || currentUser?.city || '',
         categorId: defaultItem?.categoryId || null,
         model: defaultItem?.model || '',
+        device: defaultItem?.device || '',
         brand: defaultItem?.brand || '',
     });
     const [isDetailsSaved, setDetailsSaved] = useState(false);
     const [isImageChanged, setImageChanged] = useState(false);
+
+    const isDefaultImageDisaplyed = itemId && !isImageChanged && defaultItem?.image;
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -46,10 +49,34 @@ export function AddPartForm(props) {
     };
 
     const handleUpload = async () => {
-        // קריאת אי פי אי- קוראים לקנטרולר ששומר את התמונה בסרבר
-        const _formData = new FormData();
-        _formData.append('partImage', formData.partImage);
         try {
+            let fileToSend = formData.partImage;
+            // קריאת אי פי אי- קוראים לקנטרולר ששומר את התמונה בסרבר
+            if (isDefaultImageDisaplyed) {
+                // Remove data URL prefix
+                const base64String = defaultItem?.image.replace(/^data:image\/\w+;base64,/, '');
+
+                // Remove whitespace characters
+                const cleanedBase64String = base64String.replace(/\s/g, '');
+
+                // Convert base64 to binary
+                const binaryData = atob(cleanedBase64String);
+
+                // Convert binary to array buffer
+                const arrayBuffer = new ArrayBuffer(binaryData.length);
+                const uint8Array = new Uint8Array(arrayBuffer);
+                for (let i = 0; i < binaryData.length; i++) {
+                    uint8Array[i] = binaryData.charCodeAt(i);
+                }
+
+                // Create Blob from array buffer
+                const blob = new Blob([arrayBuffer], { type: 'image/png' });
+
+                // Create File from Blob
+                fileToSend = new File([blob], 'image.png', { type: 'image/png' });
+            }
+            const _formData = new FormData();
+            _formData.append('partImage', fileToSend);
             const response = await axios.post('https://localhost:7082/api/Parts/upload', _formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
@@ -69,7 +96,7 @@ export function AddPartForm(props) {
         const partDetails = {
             partForDeviceId: itemId || 0,
             partName: formData.partName,
-            partImage: formData.partImage?.name,
+            partImage: isDefaultImageDisaplyed ? defaultItem?.partImage : formData.partImage?.name,
             description: formData.partDescription,
             model: formData.model,
             brand: formData.brand,
@@ -92,7 +119,11 @@ export function AddPartForm(props) {
             }
         }).then(response => {
             if (response.status === 200) {
-                handleUpload();
+                if (!isDefaultImageDisaplyed) {
+                    handleUpload();
+                } else {
+                    setDetailsSaved(true);
+                }
             }
         }).catch((ex) => {
             console.log(ex);
@@ -103,13 +134,13 @@ export function AddPartForm(props) {
 
     // בק\דיקה שהכפתור יהיה מאופשר רק כשכל הפרטים הנדרשים מלאים
     const checkFormValid = () => {
-        return formData.categorId && formData.partName && formData.partImage
+        return formData.categorId && formData.partName && (formData.partImage || isDefaultImageDisaplyed)
             && formData.state && formData.city && formData.model
     };
 
     const displayImage = () => {
         try {
-            if (itemId && !isImageChanged && defaultItem?.image) {
+            if (isDefaultImageDisaplyed) {
                 return `data:image/png;base64,${defaultItem?.image}`;
             }
             if (formData.partImage) {
@@ -169,8 +200,7 @@ export function AddPartForm(props) {
                                                     id="dropdown-category"
                                                     title={`Category: ${selectedCategory?.description || 'Select'}`}
                                                     onSelect={handleCategoryChange}
-                                                    // className='col-3'
-                                                    variant='secondary'
+                                                    variant='primary'
                                                 >
                                                     {categoryList?.map((categoryitem) => (
                                                         <Dropdown.Item key={categoryitem.categorId} eventKey={categoryitem.categorId} href="#">
@@ -192,7 +222,7 @@ export function AddPartForm(props) {
 
                                             <div className="d-flex justify-content-end pt-3">
                                                 <MDBBtn size="lg"
-                                                    className="ms-2" style={{ backgroundColor: 'hsl(210, 100%, 50%)' }}
+                                                    className="ms-2 btn btn-primary" style={{ backgroundColor: 'hsl(210, 100%, 50%)' }}
                                                     onClick={handleSaveDetails}
                                                     disabled={!checkFormValid()}
                                                 >

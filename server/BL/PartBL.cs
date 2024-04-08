@@ -53,10 +53,10 @@ namespace BL
             return partList.Where(x => x.ContactId == userId);
         }
 
-        public IEnumerable<DAL.DbModels.PartForDevice> GetParts()
+        public IEnumerable<DAL.DbModels.PartForDevice> GetParts(bool getRemoved = false)
         {
 
-            return new DAL.PartsDal().GetAll();
+            return new DAL.PartsDal().GetAll(getRemoved);
         }
 
         public IEnumerable<DAL.DbModels.Category> GetCategoryList()
@@ -91,7 +91,7 @@ namespace BL
                 value.CopyTo(stream);
             }
 
-            // Save the file path in your SQL database
+            // Save the file p  ath in your SQL database
             // Assuming you have a PartsDal.Insert method that handles the database insertion
             return true;
         }
@@ -111,10 +111,9 @@ namespace BL
             new DAL.PartsDal().Delete(p);
         }
 
-        public void UpdatePart(PartDTO value)
+        public bool UpdatePart(PartDTO value)
         {
-            new DAL.PartsDal().Update(value.FromPartDTO());
-
+            return new DAL.PartsDal().Update(value.FromPartDTO());
         }
 
         // Helper method to retrieve the image from the file system
@@ -122,7 +121,7 @@ namespace BL
         {
             try
             {
-                if (filePath?.Length < 1)
+                if (filePath is null || filePath?.Length < 1)
                 {
                     return null;
                 }
@@ -190,6 +189,25 @@ namespace BL
             }
 
             return result.OrderByDescending(x => x.MatchCount).ToList();
+        }
+
+        public bool ChangePartAvailability(int partForDeviceId)
+        {
+            try
+            {
+                PartForDevice p = GetParts(true).FirstOrDefault(i => i.PartForDeviceId == partForDeviceId);
+                if (p != null)
+                {
+                    PartDTO part = PartDTO.FromPartDal(p);
+                    part.IsAvailable = "0";
+                    return UpdatePart(part);
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
 

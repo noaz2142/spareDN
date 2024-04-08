@@ -64,13 +64,17 @@ namespace DAL
             }
         }
 
-        public IEnumerable<DbModels.PartForDevice> GetAll()
+        public IEnumerable<DbModels.PartForDevice> GetAll(bool getRemoved = false)
         {
             try
             {
-                using (DbModels.DevicePartsContext ctx = new DbModels.DevicePartsContext())         
+                using (DbModels.DevicePartsContext ctx = new DbModels.DevicePartsContext())
                 {
-                   return  ctx.PartForDevices.ToList();
+                    if (getRemoved)
+                    {
+                        return ctx.PartForDevices.ToList();
+                    }
+                    return ctx.PartForDevices.ToList().Where(p => !String.Equals("0", p.IsAvailable));
                 }
             }
             catch (Exception)

@@ -24,11 +24,25 @@
   text-overflow: ellipsis;
 }
 
-.edit-icon {
+.edit-icon,
+.delete-icon {
   padding: 1rem;
-  border-radius: 50%;
-  // border: 1px solid gray;
-  align-self: flex-end;
-  background-color: rgb(233, 230, 230);
+  
   margin: 1rem 1rem 0;
+  i {
+    background-color: rgb(233, 230, 230);
+    padding: 1rem;
+    border-radius: 50%;
+  }
+}
+
+.category-container {
+  padding: 2rem;
+  .card {
+    margin: 1rem 0;
+  }
+}
+
+.parts-view {
+  padding: 2rem;
 }

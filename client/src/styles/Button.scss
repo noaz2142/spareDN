@@ -10,6 +10,10 @@
     cursor: pointer;
     transition: all 0.3s ease-out;
   }
+
+  .btn:disabled {
+    background-color: rgb(202, 59, 59) !important;
+  }
   
   .btn:hover {
     padding: 8px 20px;
@@ -19,7 +23,7 @@
   }
   
   .btn-primary {
-    background-color: red;
+    background-color: red !important;
   }
   
   .btn-outline {
