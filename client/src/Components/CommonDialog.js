@@ -2,7 +2,9 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function CommonDialog({ showDialog, title, message = '', handleConfirm, handleCancel }) {
+function CommonDialog({
+    showDialog, title, message = '', handleConfirm, handleCancel, hideCancel
+}) {
 
     return (
         <>{showDialog && (
@@ -21,7 +23,7 @@ function CommonDialog({ showDialog, title, message = '', handleConfirm, handleCa
 
                     <Modal.Footer>
                         <Button variant="primary" onClick={handleConfirm} >Proceed</Button>
-                        <Button variant="" onClick={handleCancel} >Cancel</Button>
+                        {!hideCancel && <Button variant="" onClick={handleCancel} >Cancel</Button>}
                     </Modal.Footer>
                 </Modal.Dialog>
             </div>

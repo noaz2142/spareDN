@@ -11,8 +11,18 @@ function App() {
   const currentUser = JSON.parse(localStorage.getItem('user'));
   const [parts, setParts] = useState(null);
 
+  const checkNewUser = () => {
+    axios.get(`https://localhost:7082/api/User/checkNewUser?userName=${currentUser?.userName}&password=${currentUser?.userPassword}`)
+      .then(response => {
+        currentUser.isNewUser = response.data;
+        localStorage.setItem('user', JSON.stringify(currentUser));
+      })
+      .catch((ex) => console.error(ex));
+  };
+
   useEffect(() => {
     fetchCategory();
+    checkNewUser();
   }, []);
 
   const fetchCategory = () => {

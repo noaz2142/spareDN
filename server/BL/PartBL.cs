@@ -32,6 +32,7 @@ namespace BL
 
         }
 
+        // להסתיר למשתמש חדש מוצרים שנוספו ביומים האחרונים
         private IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCreationDate(int userId)
         {
             DAL.PartsDal partDal = new();
@@ -161,6 +162,7 @@ namespace BL
             }).ToArray();
         }
 
+        // חיפוש חכם
         public List<PartDTO> FreeSearch(string searchStr)
         {
             IEnumerable<PartForDevice> parts = GetParts();

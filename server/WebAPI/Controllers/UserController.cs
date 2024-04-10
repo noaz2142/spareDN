@@ -82,6 +82,13 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpGet()]
+        [Route("checkNewUser")]
+        public bool checkNewUser([FromQuery] string userName, [FromQuery] string password)
+        {
+            return new BL.UserBL().CheckNewUser(userName, password);
+        }
+
     }
 }
 

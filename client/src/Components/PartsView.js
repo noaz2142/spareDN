@@ -91,8 +91,17 @@ export function PartsView({
         }
     }
 
+
+
     return (
         <>
+            {/* הודעה למשתמש שלא הוסיף אף מוצר */}
+            <CommonDialog title="You Did Not Share Anything :("
+                showDialog={currentUser?.isNewUser}
+                handleConfirm={() => navigate('/add-part')}
+                hideCancel
+                message='You can only see products that were shared 2 days ago. Please share products as soon as possible to get the hot products.'
+            />
             <CommonDialog title="Delete Product"
                 showDialog={showRemoveWarning}
                 handleConfirm={removePart}

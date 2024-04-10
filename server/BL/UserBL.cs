@@ -86,24 +86,24 @@ namespace BL
         //    new DAL.PartsDal().Insert(value);
         //}
 
-        //public void remove(int id)
-        //{
-        //    BL.PartBL part = new BL.PartBL();
-        //    var p = part.GetParts().FirstOrDefault(i => i.PartForDeviceId == id);
-        //    new DAL.PartsDal().Delete(p);
-        //}
+        public bool CheckNewUser(string userName, string? password)
+        {
+            try
+            {
+                User user = GetExistingUser(userName, password);
+                if (user != null)
+                {
+                    DAL.PartsDal partDal = new();
+                    List<DAL.DbModels.PartForDevice> partList = partDal.GetAll().ToList();
+                    return partList.FirstOrDefault(x => x.ContactId == user.UserId) == null;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
 
-        //public void UpdatePart(PartForDevice value)
-        //{
-        //    new DAL.PartsDal().Update(value);
-
-        //}
-
-        //public IEnumerable<DAL.DbModels.PartForDevice> GetPartsByCategory(int categoryId)
-        //{
-        //    /*  DAL.partDAL partDAL = new DAL.partDAL();*/
-
-        //    return new DAL.PartsDal().GetAll().Where((partDetails) => partDetails.CategoryId == categoryId);
-        //}
+        }
     }
 }

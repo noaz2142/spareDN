@@ -32,13 +32,15 @@ export function MyProducts({ currentUser, setParts }) {
     }, []);
 
     return (
-        <div>
-            <h3>my Products</h3>
+        <div className='my-products'>
+            <h3 className='page-title'>My Products</h3>
             {userParts?.length > 0 &&
                 <PartsView
                     parts={userParts} setParts={setUserParts}
                     editUserParts hideSearch
-                    getUserProducts={getUserProducts} />}
+                    getUserProducts={getUserProducts} 
+                    currentUser={currentUser}
+                    />}
         </div>
     );
 }
